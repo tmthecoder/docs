@@ -63,11 +63,15 @@
     
         <li class="section-title"><a href="../../argon2_dart/DArgon2-class.html#instance-methods">Methods</a></li>
         <li><a href="../../argon2_dart/DArgon2/hashPasswordBytes.html">hashPasswordBytes</a></li>
+        <li><a href="../../argon2_dart/DArgon2/hashPasswordBytesSync.html">hashPasswordBytesSync</a></li>
         <li><a href="../../argon2_dart/DArgon2/hashPasswordString.html">hashPasswordString</a></li>
+        <li><a href="../../argon2_dart/DArgon2/hashPasswordStringSync.html">hashPasswordStringSync</a></li>
         <li class="inherited"><a href="https://api.dart.dev/stable/2.10.4/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
         <li class="inherited"><a href="https://api.dart.dev/stable/2.10.4/dart-core/Object/toString.html">toString</a></li>
         <li><a href="../../argon2_dart/DArgon2/verifyHashBytes.html">verifyHashBytes</a></li>
+        <li><a href="../../argon2_dart/DArgon2/verifyHashBytesSync.html">verifyHashBytesSync</a></li>
         <li><a href="../../argon2_dart/DArgon2/verifyHashString.html">verifyHashString</a></li>
+        <li><a href="../../argon2_dart/DArgon2/verifyHashStringSync.html">verifyHashStringSync</a></li>
     
         <li class="section-title inherited"><a href="../../argon2_dart/DArgon2-class.html#operators">Operators</a></li>
         <li class="inherited"><a href="https://api.dart.dev/stable/2.10.4/dart-core/Object/operator_equals.html">operator ==</a></li>
@@ -83,7 +87,7 @@
       <div><h1><span class="kind-method">verifyHashBytes</span> method </h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype"><a href="https://api.dart.dev/stable/2.10.4/dart-core/bool-class.html">bool</a></span>
+      <span class="returntype"><a href="https://api.dart.dev/stable/2.10.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.10.4/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
             <span class="name ">verifyHashBytes</span>
 (<wbr><ol class="parameter-list"><li><span class="parameter" id="verifyHashBytes-param-password"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.10.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.10.4/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">password</span>, </span></li>
 <li><span class="parameter" id="verifyHashBytes-param-encodedHash"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.10.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.10.4/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">encodedHash</span>, </span></li>
@@ -92,32 +96,17 @@
       
     </section>
     <section class="desc markdown">
-      <p>The method to verify a List<int> password and a List<int> encodedHash.</int></int></p>
+      <p>The Future method to handle verifying a List<int> argon2 hash against a List<int> password</int></int></p>
 <p>Needs a <a href="https://api.dart.dev/stable/2.10.4/dart-core/List-class.html">List</a> of type int <code>password</code>, a <a href="https://api.dart.dev/stable/2.10.4/dart-core/List-class.html">List</a> of type int <code>encodedHash</code>, as well as an
 Argon2Type <code>type</code> used for the actual hash.</p>
-<p>Returns a <a href="https://api.dart.dev/stable/2.10.4/dart-core/bool-class.html">bool</a> with a true for a success and false for a failed verification.</p>
+<p>Returns a <a href="https://api.dart.dev/stable/2.10.4/dart-async/Future-class.html">Future</a> with the <a href="https://api.dart.dev/stable/2.10.4/dart-core/bool-class.html">bool</a> of whether the hashing was a match or not</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool verifyHashBytes(List&lt;int&gt; password, List&lt;int&gt; encodedHash,
-    {Argon2Type type = Argon2Type.i}) {
-  &#47;&#47;Create pointers to pass to the C method
-  var passPointer = _setPtr(password);
-  var hashPointer = Utf8.toUtf8(utf8.decode(encodedHash));
-  &#47;&#47; var hashPointer = _setPtr(encodedHash);
-  &#47;&#47;Get the result
-  var result = LocalBinder.instance
-      .verifyHash(hashPointer, passPointer, password.length, type.index);
-  &#47;&#47;Free the pointers
-  free(passPointer);
-  free(hashPointer);
-  if (DArgon2ErrorCode.values[result.abs()] != DArgon2ErrorCode.ARGON2_OK) {
-    throw DArgon2Exception(
-        Utf8.fromUtf8(LocalBinder.instance.getErrorMessage(result)),
-        DArgon2ErrorCode.values[result.abs()]);
-  }
-  return result == 0;
+      <pre class="language-dart"><code class="language-dart">Future&lt;bool&gt; verifyHashBytes(List&lt;int&gt; password, List&lt;int&gt; encodedHash,
+    {Argon2Type type = Argon2Type.i}) async {
+  return verifyHashBytesSync(password, encodedHash, type: type);
 }</code></pre>
     </section>
 
@@ -131,7 +120,7 @@ Argon2Type <code>type</code> used for the actual hash.</p>
 <footer>
   <span class="no-break">
     dargon2
-      1.0.4
+      1.1.0
   </span>
 
 </footer>

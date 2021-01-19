@@ -63,11 +63,15 @@
     
         <li class="section-title"><a href="../../argon2_dart/DArgon2-class.html#instance-methods">Methods</a></li>
         <li><a href="../../argon2_dart/DArgon2/hashPasswordBytes.html">hashPasswordBytes</a></li>
+        <li><a href="../../argon2_dart/DArgon2/hashPasswordBytesSync.html">hashPasswordBytesSync</a></li>
         <li><a href="../../argon2_dart/DArgon2/hashPasswordString.html">hashPasswordString</a></li>
+        <li><a href="../../argon2_dart/DArgon2/hashPasswordStringSync.html">hashPasswordStringSync</a></li>
         <li class="inherited"><a href="https://api.dart.dev/stable/2.10.4/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
         <li class="inherited"><a href="https://api.dart.dev/stable/2.10.4/dart-core/Object/toString.html">toString</a></li>
         <li><a href="../../argon2_dart/DArgon2/verifyHashBytes.html">verifyHashBytes</a></li>
+        <li><a href="../../argon2_dart/DArgon2/verifyHashBytesSync.html">verifyHashBytesSync</a></li>
         <li><a href="../../argon2_dart/DArgon2/verifyHashString.html">verifyHashString</a></li>
+        <li><a href="../../argon2_dart/DArgon2/verifyHashStringSync.html">verifyHashStringSync</a></li>
     
         <li class="section-title inherited"><a href="../../argon2_dart/DArgon2-class.html#operators">Operators</a></li>
         <li class="inherited"><a href="https://api.dart.dev/stable/2.10.4/dart-core/Object/operator_equals.html">operator ==</a></li>
@@ -83,7 +87,7 @@
       <div><h1><span class="kind-method">verifyHashString</span> method </h1></div>
 
     <section class="multi-line-signature">
-      <span class="returntype"><a href="https://api.dart.dev/stable/2.10.4/dart-core/bool-class.html">bool</a></span>
+      <span class="returntype"><a href="https://api.dart.dev/stable/2.10.4/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.10.4/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
             <span class="name ">verifyHashString</span>
 (<wbr><ol class="parameter-list"><li><span class="parameter" id="verifyHashString-param-password"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.10.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span>, </span></li>
 <li><span class="parameter" id="verifyHashString-param-encodedHash"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.10.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">encodedHash</span>, </span></li>
@@ -92,19 +96,18 @@
       
     </section>
     <section class="desc markdown">
-      <p>The method to verify a String password and a String encodedHash.</p>
+      <p>The Future method to handle verifying a String argon2 hash against a String password</p>
 <p>Needs a UTF-8 String <code>password</code>, a UTF-8 String <code>encodedHash</code>, as well as an
 Argon2Type <code>type</code> used for the actual hash. This method gets the byte arrays of
 both Strings and calls <a href="../../argon2_dart/DArgon2/verifyHashBytes.html">verifyHashBytes</a> with that info.</p>
-<p>Returns a <a href="https://api.dart.dev/stable/2.10.4/dart-core/bool-class.html">bool</a> with a true for a success and false for a failed verification.</p>
+<p>Returns a <a href="https://api.dart.dev/stable/2.10.4/dart-async/Future-class.html">Future</a> with the <a href="https://api.dart.dev/stable/2.10.4/dart-core/bool-class.html">bool</a> of whether the hashing was a match or not</p>
     </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
-      <pre class="language-dart"><code class="language-dart">bool verifyHashString(String password, String encodedHash,
-    {Argon2Type type = Argon2Type.i}) {
-  return verifyHashBytes(utf8.encode(password), utf8.encode(encodedHash),
-      type: type);
+      <pre class="language-dart"><code class="language-dart">Future&lt;bool&gt; verifyHashString(String password, String encodedHash,
+    {Argon2Type type = Argon2Type.i}) async {
+  return verifyHashStringSync(password, encodedHash, type: type);
 }</code></pre>
     </section>
 
@@ -118,7 +121,7 @@ both Strings and calls <a href="../../argon2_dart/DArgon2/verifyHashBytes.html">
 <footer>
   <span class="no-break">
     dargon2
-      1.0.4
+      1.1.0
   </span>
 
 </footer>
