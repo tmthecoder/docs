@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Argon2Swift Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/Argon2Swift" class="dashAnchor"></a>
+
+    <a title="Argon2Swift Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Argon2Swift 1.0.0 Docs
+        </a>
+         (98% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Argon2Swift Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      Argon2Swift Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../readme.html">README</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Argon2Swift.html">Argon2Swift</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Argon2SwiftResult.html">Argon2SwiftResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Salt.html">Salt</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Argon2SwiftErrorCode.html">Argon2SwiftErrorCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Argon2Type.html">Argon2Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Argon2Version.html">Argon2Version</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Argon2SwiftException.html">Argon2SwiftException</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>Argon2Swift</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Argon2Swift</span></code></pre>
+
+                </div>
+              </div>
+            <p>Main class to handle all Argon2 hashing and verification</p>
+<h3 id='usage-example' class='heading'>Usage Example</h3>
+
+<ul>
+<li>Hash the password: &ldquo;Password12&rdquo;</li>
+</ul>
+<pre class="highlight swift"><code>   <span class="k">let</span> <span class="nv">hashResult</span> <span class="o">=</span> <span class="k">try!</span> <span class="kt">Argon2Swift</span><span class="o">.</span><span class="nf">hashPasswordString</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="s">"Password12"</span><span class="p">,</span> <span class="nv">salt</span><span class="p">:</span> <span class="kt">Salt</span><span class="o">.</span><span class="nf">newSalt</span><span class="p">())</span>
+   <span class="k">let</span> <span class="nv">hashData</span> <span class="o">=</span> <span class="n">hashResult</span><span class="o">.</span><span class="nf">hashData</span><span class="p">()</span>
+   <span class="k">let</span> <span class="nv">base64Hash</span> <span class="o">=</span> <span class="n">hashResult</span><span class="o">.</span><span class="nf">base64String</span><span class="p">()</span>
+   <span class="k">let</span> <span class="nv">hexHash</span> <span class="o">=</span> <span class="n">hashResult</span><span class="o">.</span><span class="nf">hexString</span><span class="p">()</span>
+   <span class="k">let</span> <span class="nv">encodedData</span> <span class="o">=</span> <span class="n">hashResult</span><span class="o">.</span><span class="nf">encodedData</span><span class="p">()</span>
+   <span class="k">let</span> <span class="nv">encodedString</span> <span class="o">=</span> <span class="n">hashResult</span><span class="o">.</span><span class="nf">encodedString</span><span class="p">()</span>
+</code></pre>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Argon2SwiftAAC18hashPasswordString8password4salt10iterations6memory11parallelism6length4type7versionAA0aB6ResultCSS_AA4SaltCS4iAA0A4TypeOAA0A7VersionOtKFZ"></a>
+                    <a name="//apple_ref/swift/Method/hashPasswordString(password:salt:iterations:memory:parallelism:length:type:version:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Argon2SwiftAAC18hashPasswordString8password4salt10iterations6memory11parallelism6length4type7versionAA0aB6ResultCSS_AA4SaltCS4iAA0A4TypeOAA0A7VersionOtKFZ">hashPasswordString(password:<wbr>salt:<wbr>iterations:<wbr>memory:<wbr>parallelism:<wbr>length:<wbr>type:<wbr>version:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hashes a given <code>String</code> password with Argon2 utilizing the given salt as well as optionally the specific parameters of the hashing operation itself</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p><code><a href="../Structs/Argon2SwiftException.html">Argon2SwiftException</a></code> if the hashing fails in any manner</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">hashPasswordString</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">salt</span><span class="p">:</span> <span class="kt"><a href="../Classes/Salt.html">Salt</a></span><span class="p">,</span> <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="nv">memory</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span> <span class="nv">parallelism</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/Argon2Type.html">Argon2Type</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Enums/Argon2Version.html">Argon2Version</a></span> <span class="o">=</span> <span class="o">.</span><span class="kt">V13</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/Argon2SwiftResult.html">Argon2SwiftResult</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>String</code> password to hash (utf-8 encoded)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>salt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Classes/Salt.html">Salt</a></code> to use with Argon2 as the salt in the hashing operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>iterations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The amount of iterations that the algorithm should perform (optional parameter, defaults to 32)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>memory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The amount of memory the hashing operation can use at a maximum (optional parameter, defaults to 256)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parallelism</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The factor of parallelism when comouting the hash (optional parameter, defaults to 2)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>length</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The length of the final hash (optional parameter, defaults to 32)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of Argon2 to use, either<code>i</code>, <code>d</code>, or <code>id</code> (optional parameter, defaults to <code>.i</code>)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The version of Argon2 to use in the hashing computation, either <code>V10</code> or <code>V13</code> (optional parameter, defaults to <code>.V13</code>)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An <code><a href="../Classes/Argon2SwiftResult.html">Argon2SwiftResult</a></code> containing the hash, encoding, and convenience methods to access the hash and encoded results in various forms</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Argon2SwiftAAC17hashPasswordBytes8password4salt10iterations6memory11parallelism6length4type7versionAA0aB6ResultC10Foundation4DataV_AA4SaltCS4iAA0A4TypeOAA0A7VersionOtKFZ"></a>
+                    <a name="//apple_ref/swift/Method/hashPasswordBytes(password:salt:iterations:memory:parallelism:length:type:version:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Argon2SwiftAAC17hashPasswordBytes8password4salt10iterations6memory11parallelism6length4type7versionAA0aB6ResultC10Foundation4DataV_AA4SaltCS4iAA0A4TypeOAA0A7VersionOtKFZ">hashPasswordBytes(password:<wbr>salt:<wbr>iterations:<wbr>memory:<wbr>parallelism:<wbr>length:<wbr>type:<wbr>version:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Hashes a given <code>Data</code> password with Argon2 utilizing the given salt as well as optionally the specific parameters of the hashing operation itself</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p><code><a href="../Structs/Argon2SwiftException.html">Argon2SwiftException</a></code> if the hashing fails in any manner</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">hashPasswordBytes</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">salt</span><span class="p">:</span> <span class="kt"><a href="../Classes/Salt.html">Salt</a></span><span class="p">,</span> <span class="nv">iterations</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="nv">memory</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span> <span class="nv">parallelism</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/Argon2Type.html">Argon2Type</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Enums/Argon2Version.html">Argon2Version</a></span> <span class="o">=</span> <span class="o">.</span><span class="kt">V13</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/Argon2SwiftResult.html">Argon2SwiftResult</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Data</code> password to hash</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>salt</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Classes/Salt.html">Salt</a></code> to use with Argon2 as the salt in the hashing operation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>iterations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The amount of iterations that the algorithm should perform (optional parameter, defaults to 32)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>memory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The amount of memory the hashing operation can use at a maximum (optional parameter, defaults to 256)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parallelism</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The factor of parallelism when comouting the hash (optional parameter, defaults to 2)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>length</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The length of the final hash (optional parameter, defaults to 32)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of Argon2 to use, either<code>i</code>, <code>d</code>, or <code>id</code> (optional parameter, defaults to <code>.i</code>)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>version</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The version of Argon2 to use in the hashing computation, either <code>V10</code> or <code>V13</code> (optional parameter, defaults to <code>.V13</code>)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An <code><a href="../Classes/Argon2SwiftResult.html">Argon2SwiftResult</a></code> containing the hash, encoding, and convenience methods to access the hash and encoded results in various forms</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Argon2SwiftAAC16verifyHashString8password4hash4typeSbSS_SSAA0A4TypeOtKFZ"></a>
+                    <a name="//apple_ref/swift/Method/verifyHashString(password:hash:type:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Argon2SwiftAAC16verifyHashString8password4hash4typeSbSS_SSAA0A4TypeOtKFZ">verifyHashString(password:<wbr>hash:<wbr>type:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verifies a <code>String</code> password with the given encoded <code>String</code>, returning <code>true</code> on successful verifications and <code>false</code> on incorrect ones.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p><code><a href="../Structs/Argon2SwiftException.html">Argon2SwiftException</a></code> if the verification fails in any manner</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">verifyHashString</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/Argon2Type.html">Argon2Type</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">i</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>String</code> password to verify and check (utf-8 encoded)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoded</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>String</code> encoded Argon2 value to check the password against (utf-8 encoded)</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of Argon2 to use, either <code>i</code>, <code>d</code>, or <code>id</code> (optional parameter, defaults to <code>.i</code>)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>Bool</code> signifying whether the password is equivalent to the hash or not</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Argon2SwiftAAC15verifyHashBytes8password4hash4typeSb10Foundation4DataV_AiA0A4TypeOtKFZ"></a>
+                    <a name="//apple_ref/swift/Method/verifyHashBytes(password:hash:type:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Argon2SwiftAAC15verifyHashBytes8password4hash4typeSb10Foundation4DataV_AiA0A4TypeOtKFZ">verifyHashBytes(password:<wbr>hash:<wbr>type:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verifies a <code>Data</code> password with the given encoded <code>Data</code>, returning <code>true</code> on successful verifications and <code>false</code> on incorrect ones.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p><code><a href="../Structs/Argon2SwiftException.html">Argon2SwiftException</a></code> if the verification fails in any manner</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">verifyHashBytes</span><span class="p">(</span><span class="nv">password</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/Argon2Type.html">Argon2Type</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">i</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Data</code> password to verify and check</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoded</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Data</code> encoded Argon2 value to check the password against</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of Argon2 to use, either <code>i</code>, <code>d</code>, or <code>id</code> (optional parameter, defaults to <code>.i</code>)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>Bool</code> signifying whether the password is equivalent to the hash or not</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Argon2SwiftAAC03getA4Type4typeSo0a1_E0VAA0aD0O_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/getArgon2Type(type:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Argon2SwiftAAC03getA4Type4typeSo0a1_E0VAA0aD0O_tFZ">getArgon2Type(type:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to map the <code><a href="../Enums/Argon2Type.html">Argon2Type</a></code> Swift enum to the <code>Argon2_type</code> C struct in the reference library</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getArgon2Type</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/Argon2Type.html">Argon2Type</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Argon2_type</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Enums/Argon2Type.html">Argon2Type</a></code> to get the equivalent <code>Argon2_type</code> for</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An <code>Argon2_type</code> object to use in the C argon2 methods</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Argon2SwiftAAC6setPtr6lengthSpys4Int8VGSi_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/setPtr(length:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Argon2SwiftAAC6setPtr6lengthSpys4Int8VGSi_tFZ">setPtr(length:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to set an <code>[Int8]</code> mutable pointer that the C methods will modify with results</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">setPtr</span><span class="p">(</span><span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">Int8</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>length</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The length of the pointer to allocate</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An allocated <code>UnsafeMutablePointer&lt;Int8&gt;</code> with the given length</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11Argon2SwiftAAC7freePtr7pointer6lengthySpys4Int8VG_SitFZ"></a>
+                    <a name="//apple_ref/swift/Method/freePtr(pointer:length:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Argon2SwiftAAC7freePtr7pointer6lengthySpys4Int8VG_SitFZ">freePtr(pointer:<wbr>length:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A method to deinitialize and deallocate an <code>Int8</code> mutable pointer that has been already allocated</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">freePtr</span><span class="p">(</span><span class="nv">pointer</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">Int8</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>pointer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The  <code>UnsafeMutablePointer&lt;Int8&gt;</code> to deinitialize and free</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>length</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The length of the given pointer</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2021 <a class="link" href="https://github.com/tmthecoder/Argon2Swift.git" target="_blank" rel="external">Tejas Mehta</a>. All rights reserved. (Last updated: 2021-01-19)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

@@ -1,0 +1,12 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/runner/work/Argon2Swift/Argon2Swift/Sources/Swift/Argon2SwiftErrorCode.swift",
+      "line": 11,
+      "symbol": "Argon2SwiftErrorCode.ARGON2_OK",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/runner/work/Argon2Swift/Argon2Swift"
+}
