@@ -108,17 +108,17 @@ Argon2Type <code>type</code> used for the actual hash.</p>
     {Argon2Type type = Argon2Type.i}) {
   &#47;&#47;Create pointers to pass to the C method
   var passPointer = _setPtr(password);
-  var hashPointer = Utf8.toUtf8(utf8.decode(encodedHash));
+  var hashPointer = utf8.decode(encodedHash).toNativeUtf8();
   &#47;&#47; var hashPointer = _setPtr(encodedHash);
   &#47;&#47;Get the result
   var result = LocalBinder.instance
       .verifyHash(hashPointer, passPointer, password.length, type.index);
   &#47;&#47;Free the pointers
-  free(passPointer);
-  free(hashPointer);
+  malloc.free(passPointer);
+  malloc.free(hashPointer);
   if (DArgon2ErrorCode.values[result.abs()] != DArgon2ErrorCode.ARGON2_OK) {
     throw DArgon2Exception(
-        Utf8.fromUtf8(LocalBinder.instance.getErrorMessage(result)),
+        LocalBinder.instance.getErrorMessage(result).toDartString(),
         DArgon2ErrorCode.values[result.abs()]);
   }
   return result == 0;
