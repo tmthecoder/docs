@@ -8,7 +8,8 @@
   <title>dargon2_flutter library - Dart API</title>
 
   
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../static-assets/github.css">
   <link rel="stylesheet" href="../static-assets/styles.css">
@@ -35,7 +36,7 @@
 
 <main>
 
-  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
     <header id="header-search-sidebar" class="hidden-l">
       <form class="search-sidebar" role="search">
         <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
@@ -54,7 +55,7 @@
     </ol>
   </div>
 
-  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+  <div id="dartdoc-main-content" class="main-content">
       <div><h1><span class="kind-library">dargon2_flutter</span> library  </h1></div>
 
     
@@ -63,21 +64,21 @@
 
       <dl>
         <dt id="DArgon2">
-          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2-class.html">DArgon2</a></span>         
+          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2-class.html">DArgon2</a></span>         
         </dt>
         <dd>
           A class that houses all of the methods to hash and verify a password using
-the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password hashing algorithm. <a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2-class.html">[...]</a>
+the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password hashing algorithm. <a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2-class.html">[...]</a>
         </dd>
         <dt id="DArgon2Result">
-          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2Result-class.html">DArgon2Result</a></span>         
+          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2Result-class.html">DArgon2Result</a></span>         
         </dt>
         <dd>
           A class that stores the results from an Argon2 Hashing operation.
 Allows for a user to get various values from the List<int> <code>_bytes</code> and <code>_encodedBytes</code>.</int> 
         </dd>
         <dt id="Salt">
-          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/Salt-class.html">Salt</a></span>         
+          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/Salt-class.html">Salt</a></span>         
         </dt>
         <dd>
           A class to abstract and handle Salts for the Argon2 hashing process.
@@ -95,10 +96,10 @@ or create a new salt with secure random bytes.</int>
       <dl class="properties">
         <dt id="argon2" class="constant">
           <span class="name "><a href="../dargon2_flutter/argon2-constant.html">argon2</a></span>
-          <span class="signature">&#8594; const <a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2-class.html">DArgon2</a></span>
+          <span class="signature">&#8594; const <a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2-class.html">DArgon2</a></span>
                   </dt>
         <dd>
-          The Canonical instance of <a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2-class.html">dargon2.DArgon2</a> in a wrapper class for ease.
+          The Canonical instance of <a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2-class.html">dargon2.DArgon2</a> in a wrapper class for ease.
 The real code for native binding and hashing is located in the dargon2 library 
                   
   <div>
@@ -115,19 +116,19 @@ The real code for native binding and hashing is located in the dargon2 library
 
       <dl>
         <dt id="Argon2Type">
-          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/Argon2Type-class.html">Argon2Type</a></span>         
+          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/Argon2Type-class.html">Argon2Type</a></span>         
         </dt>
         <dd>
           The enum to determine the Argon2 Type used (Argon2i, Argon2d, Argon2id). 
         </dd>
         <dt id="Argon2Version">
-          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/Argon2Version-class.html">Argon2Version</a></span>         
+          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/Argon2Version-class.html">Argon2Version</a></span>         
         </dt>
         <dd>
           The enum used to determine the Argon2 Version used (0x10 or 0x13). 
         </dd>
         <dt id="DArgon2ErrorCode">
-          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2ErrorCode-class.html">DArgon2ErrorCode</a></span>         
+          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2ErrorCode-class.html">DArgon2ErrorCode</a></span>         
         </dt>
         <dd>
           The enum with all of the Argon2 Error codes, seen directly from the C
@@ -143,41 +144,42 @@ as used to retrieve the error message from the C library.
 
       <dl>
         <dt id="DArgon2Exception">
-          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2Exception-class.html">DArgon2Exception</a></span>         
+          <span class="name "><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2Exception-class.html">DArgon2Exception</a></span>         
         </dt>
         <dd>
           A generic exception class to present each of the thrown exceptions from
-the Argon2 Library to allow users to know exactly what errored <a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2Exception-class.html">[...]</a>
+the Argon2 Library to allow users to know exactly what errored <a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2Exception-class.html">[...]</a>
         </dd>
       </dl>
     </section>
 
   </div> <!-- /.main-content -->
 
-  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <h5>dargon2_flutter library</h5>
     <ol>
-      <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#classes">Classes</a></li>
-      <li><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2-class.html">DArgon2</a></li>
-      <li><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2Result-class.html">DArgon2Result</a></li>
-      <li><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/Salt-class.html">Salt</a></li>
-    
-    
-    
-      <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#constants">Constants</a></li>
-      <li><a href="../dargon2_flutter/argon2-constant.html">argon2</a></li>
-    
-    
-    
-      <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#enums">Enums</a></li>
-      <li><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/Argon2Type-class.html">Argon2Type</a></li>
-      <li><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/Argon2Version-class.html">Argon2Version</a></li>
-      <li><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2ErrorCode-class.html">DArgon2ErrorCode</a></li>
-    
-    
-      <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#exceptions">Exceptions</a></li>
-      <li><a href="https://pub.dev/documentation/dargon2/1.1.0/argon2_dart/DArgon2Exception-class.html">DArgon2Exception</a></li>
-    </ol>
+  <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#classes">Classes</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2-class.html">DArgon2</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2Result-class.html">DArgon2Result</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/Salt-class.html">Salt</a></li>
+
+
+
+  <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#constants">Constants</a></li>
+  <li><a href="../dargon2_flutter/argon2-constant.html">argon2</a></li>
+
+
+
+  <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#enums">Enums</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/Argon2Type-class.html">Argon2Type</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/Argon2Version-class.html">Argon2Version</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2ErrorCode-class.html">DArgon2ErrorCode</a></li>
+
+
+  <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#exceptions">Exceptions</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2/1.1.2/argon2_dart/DArgon2Exception-class.html">DArgon2Exception</a></li>
+</ol>
+
   </div><!--/sidebar-offcanvas-right-->
 
 </main>
@@ -185,7 +187,7 @@ the Argon2 Library to allow users to know exactly what errored <a href="https://
 <footer>
   <span class="no-break">
     dargon2_flutter
-      1.1.0
+      1.1.2
   </span>
 
 </footer>
@@ -193,7 +195,6 @@ the Argon2 Library to allow users to know exactly what errored <a href="https://
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../static-assets/typeahead.bundle.min.js"></script>
 <script src="../static-assets/highlight.pack.js"></script>
-<script src="../static-assets/URI.js"></script>
 <script src="../static-assets/script.js"></script>
 
 
