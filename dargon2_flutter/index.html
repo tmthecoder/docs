@@ -60,6 +60,16 @@
 <p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></p>
 <p>A wrapper plugin over the <a href="https://github.com/tmthecoder/dargon2">dargon2</a> plugin to handle the platform-specific dart:ffi integrations for iOS and Android
 Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a>, winner of the <a href="https://password-hashing.net">Password Hash Competition</a></p>
+<h2 id="pure-objective-c-ios">Pure Objective-C iOS</h2>
+<p>If you're using Objective-C for the iOS portion of your application (created with Objective-C and no Swift code), there's a few extra steps:</p>
+<ul>
+<li>Open the Xcode workspace (type in <code>open iOS/Runner.xcworkspace</code> in the terminal in the project's root directory)</li>
+<li>Right click the <code>Runner</code> directory (Folder, not project/workspace)</li>
+<li>Click <code>New File</code></li>
+<li>Select <code>Swift File</code> in the prompt</li>
+<li>(<strong>This is the Important Step</strong>) Select <code>Create Bridging Header</code> when the prompt comes up</li>
+<li>You don't have to add anything to that swift file or the bridging header, but it needs to be there along with the bridging header in order for the plugin to compile correctly for iOS</li>
+</ul>
 <h2 id="usage">Usage</h2>
 <p>High-level hashing and verification (for direct hashing &amp; verification of byte arrays, check the example on <a href="https://github.com/tmthecoder/dargon2">dargon2</a>)</p>
 <pre class="language-dart"><code class="language-dart">void _hash() async {
@@ -115,7 +125,7 @@ Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-win
 <footer>
   <span class="no-break">
     dargon2_flutter
-      1.1.3
+      1.2.0
   </span>
 
 </footer>
