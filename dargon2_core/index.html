@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 0.42.0">
+  <meta name="description" content="dargon2_core API docs, for the Dart programming language.">
+  <title>dargon2_core - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+
+  
+</head>
+
+
+<body data-base-href=""
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/tmthecoder/dargon2_core">dargon2_core package</a></li>
+  </ol>
+  <div class="self-name">dargon2_core</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://github.com/tmthecoder/dargon2_core">dargon2_core package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">dargon2_core</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="dargon2_core/dargon2_core-library.html">dargon2_core</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h2 id="dargon2_core">dargon2_core</h2>
+<p>This library generally should not be used in most contexts</p>
+<p>This library is an umbrella library that  contains all method bindings for dargon2 and dargon2_flutter.</p>
+<p>This library uses a given library (by dargon2 or dargon2_flutter) to create the bindings between Dart and argon2's C library. If you're using this library directly, you'll need to supply a LibLoader conforming to the class</p>
+<h2 id="usage">Usage</h2>
+<p>A simple usage example:</p>
+<pre class="language-dart"><code class="language-dart">import 'dart:ffi';
+
+import 'package:dargon2_core/dargon2_core.dart';
+
+void main() {
+  // Create an instance of DArgon2
+  final argon2 = DArgon2(TestLibLoader());
+}
+
+class TestLibLoader implements LibLoader {
+  @override
+  String getPath() {
+    // Return the Argon2 Reference Library's path here
+    throw UnimplementedError();
+  }
+
+  @override
+  DynamicLibrary loadLib() {
+    // Return the actual loaded DynamicLibary here
+    throw UnimplementedError();
+  }
+}
+</code></pre>
+<h2 id="features-and-bugs">Features and bugs</h2>
+<p>Please file feature requests and bugs at the <a href="https://github.com/tmthecoder/dargon2_core/issues">issue tracker</a>.</p>
+<h2 id="licensing">Licensing</h2>
+<ul>
+<li>dargon2_core is Licensed under the <a href="https://github.com/tmthecoder/dargon2_core/blob/main/LICENSE">MIT License</a></li>
+<li>The C implementation of <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> is licensed under a dual <a href="https://github.com/P-H-C/phc-winner-argon2/blob/master/LICENSE">Apache and CC0 License</a></li>
+</ul>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="dargon2_core">
+  <span class="name"><a href="dargon2_core/dargon2_core-library.html">dargon2_core</a></span> 
+
+</dt>
+<dd>Support for doing something awesome. <a href="dargon2_core/dargon2_core-library.html">[...]</a>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    dargon2_core
+      1.0.0
+  </span>
+
+  
+</footer>
+
+
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/script.js"></script>
+
+
+
+</body>
+
+</html>
+
