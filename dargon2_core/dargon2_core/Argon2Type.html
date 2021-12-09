@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the Salt class from the dargon2_core library, for the Dart programming language.">
-  <title>Salt class - dargon2_core library - Dart API</title>
+  <meta name="description" content="API docs for the Argon2Type enum from the dargon2_core library, for the Dart programming language.">
+  <title>Argon2Type enum - dargon2_core library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">dargon2_core</a></li>
     <li><a href="../dargon2_core/dargon2_core-library.html">dargon2_core</a></li>
-    <li class="self-crumb">Salt class</li>
+    <li class="self-crumb">Argon2Type enum</li>
   </ol>
-  <div class="self-name">Salt</div>
+  <div class="self-name">Argon2Type</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -44,40 +44,87 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-class">Salt</span> class 
+<h1><span class="kind-enum">Argon2Type</span> enum 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>A class to abstract and handle Salts for the Argon2 hashing process.
-Allows for a user to create a salt with given bytes (List<int>)
-or create a new salt with secure random bytes.</int></p>
+  <p>The enum to determine the Argon2 Type used (Argon2i, Argon2d, Argon2id).</p>
 </section>
 
 
+    <section>
+      <dl class="dl-horizontal">
 
-    <section class="summary offset-anchor" id="constructors">
-      <h2>Constructors</h2>
+      </dl>
+    </section>
 
-      <dl class="constructor-summary-list">
-        <dt id="Salt" class="callable">
-          <span class="name"><a href="../dargon2_core/Salt/Salt.html">Salt</a></span><span class="signature">(<span class="parameter" id="-param-_bytes"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.0/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.0/dart-core/int-class.html">int</a></span>&gt;</span></span> <span class="parameter-name">_bytes</span></span>)</span>
-        </dt>
-        <dd>
-          Public Constructor accepting <code>_bytes</code> of a user's choosing.
-This allows a user to create their own predefined salt. 
-        </dd>
-        <dt id="Salt.newSalt" class="callable">
-          <span class="name"><a href="../dargon2_core/Salt/Salt.newSalt.html">Salt.newSalt</a></span><span class="signature">(<span class="parameter" id="newSalt-param-length">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">length</span> = <span class="default-value">16</span>}</span>)</span>
-        </dt>
-        <dd>
-          Factory constructor to create a salt with random bytes.
-Optionally accepts a <code>length</code> of type int to create salts
-of a length that the user inputs. 
-          <div class="constructor-modifier features">factory</div>
-        </dd>
+    <section class="summary offset-anchor" id="constants">
+      <h2>Constants</h2>
+
+      <dl class="properties">
+        <dt id="d" class="constant">
+  <span class="name ">d</span>
+  <span class="signature">&#8594; const <a href="../dargon2_core/Argon2Type.html">Argon2Type</a></span>
+  
+
+</dt>
+<dd>
+  <p>Utilize Argon2d for hashing</p> 
+  
+
+  <div>
+    <span class="signature"><code>const Argon2Type(0)</code></span>
+  </div>
+</dd>
+
+        <dt id="i" class="constant">
+  <span class="name ">i</span>
+  <span class="signature">&#8594; const <a href="../dargon2_core/Argon2Type.html">Argon2Type</a></span>
+  
+
+</dt>
+<dd>
+  <p>Utilize Argon2i for hashing</p> 
+  
+
+  <div>
+    <span class="signature"><code>const Argon2Type(1)</code></span>
+  </div>
+</dd>
+
+        <dt id="id" class="constant">
+  <span class="name ">id</span>
+  <span class="signature">&#8594; const <a href="../dargon2_core/Argon2Type.html">Argon2Type</a></span>
+  
+
+</dt>
+<dd>
+  <p>Utilize Argon2id for hashing</p> 
+  
+
+  <div>
+    <span class="signature"><code>const Argon2Type(2)</code></span>
+  </div>
+</dd>
+
+        <dt id="values" class="constant">
+  <span class="name ">values</span>
+  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/2.15.0/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../dargon2_core/Argon2Type.html">Argon2Type</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  <p>A constant List of the values in this enum, in order of their declaration.</p> 
+  
+
+  <div>
+    <span class="signature"><code>const List&lt;<wbr><span class="type-parameter">Argon2Type</span>&gt;</code></span>
+  </div>
+</dd>
+
       </dl>
     </section>
 
@@ -85,17 +132,6 @@ of a length that the user inputs.
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="bytes" class="property">
-  <span class="name"><a href="../dargon2_core/Salt/bytes.html">bytes</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.0/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.0/dart-core/int-class.html">int</a></span>&gt;</span></span> 
-
-</dt>
-<dd>
-  A getter to get the bytes stored in the object. 
-  <div class="features">read-only</div>
-
-</dd>
-
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.0/dart-core/int-class.html">int</a></span> 
@@ -104,6 +140,17 @@ of a length that the user inputs.
 <dd class="inherited">
   The hash code for this object. <a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/hashCode.html">[...]</a>
   <div class="features">read-only, inherited</div>
+
+</dd>
+
+        <dt id="index" class="property">
+  <span class="name">index</span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.0/dart-core/int-class.html">int</a></span> 
+
+</dt>
+<dd>
+  <p>The integer index of this enum.</p> 
+  <div class="features">final</div>
 
 </dd>
 
@@ -121,7 +168,7 @@ of a length that the user inputs.
       </dl>
     </section>
 
-    <section class="summary offset-anchor inherited" id="instance-methods">
+    <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
         <dt id="noSuchMethod" class="callable inherited">
@@ -137,16 +184,16 @@ of a length that the user inputs.
 
 </dd>
 
-        <dt id="toString" class="callable inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+        <dt id="toString" class="callable">
+  <span class="name"><a href="../dargon2_core/Argon2Type/toString.html">toString</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.0/dart-core/String-class.html">String</a></span>
   </span>
   
 
 </dt>
-<dd class="inherited">
-  A string representation of this object. <a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/toString.html">[...]</a>
-  <div class="features">inherited</div>
+<dd>
+  A string representation of this object. <a href="../dargon2_core/Argon2Type/toString.html">[...]</a>
+  <div class="features">override</div>
 
 </dd>
 
@@ -173,8 +220,6 @@ of a length that the user inputs.
     </section>
 
 
-
-
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
@@ -187,7 +232,7 @@ of a length that the user inputs.
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">dargon2_core</a></li>
   <li><a href="../dargon2_core/dargon2_core-library.html">dargon2_core</a></li>
-  <li class="self-crumb">Salt class</li>
+  <li class="self-crumb">Argon2Type enum</li>
 </ol>
 
 
@@ -221,26 +266,26 @@ of a length that the user inputs.
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <ol>
 
-    <li class="section-title"><a href="../dargon2_core/Salt-class.html#constructors">Constructors</a></li>
-    <li><a href="../dargon2_core/Salt/Salt.html">Salt</a></li>
-    <li><a href="../dargon2_core/Salt/Salt.newSalt.html">newSalt</a></li>
 
+    <li class="section-title"><a href="../dargon2_core/Argon2Type.html#constants">Constants</a></li>
+    <li>d</li>
+    <li>i</li>
+    <li>id</li>
+    <li>values</li>
 
     <li class="section-title">
-      <a href="../dargon2_core/Salt-class.html#instance-properties">Properties</a>
+      <a href="../dargon2_core/Argon2Type.html#instance-properties">Properties</a>
     </li>
-    <li><a href="../dargon2_core/Salt/bytes.html">bytes</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li>index</li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
-    <li class="section-title inherited"><a href="../dargon2_core/Salt-class.html#instance-methods">Methods</a></li>
+    <li class="section-title"><a href="../dargon2_core/Argon2Type.html#instance-methods">Methods</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li class="inherited"><a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/toString.html">toString</a></li>
+    <li><a href="../dargon2_core/Argon2Type/toString.html">toString</a></li>
 
-    <li class="section-title inherited"><a href="../dargon2_core/Salt-class.html#operators">Operators</a></li>
+    <li class="section-title inherited"><a href="../dargon2_core/Argon2Type.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.0/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
 
 
 </ol>
