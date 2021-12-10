@@ -12,9 +12,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../static-assets/github.css">
-  <link rel="stylesheet" href="../static-assets/styles.css">
-  <link rel="icon" href="../static-assets/favicon.png">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
 
   
 </head>
@@ -40,27 +41,6 @@
 <main>
 
 
-  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
-  <form class="search-sidebar" role="search">
-    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
-  </form>
-</header>
-
-<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../index.html">dargon2</a></li>
-  <li class="self-crumb">argon2_dart library</li>
-</ol>
-
-
-    <h5><span class="package-name">dargon2</span> <span class="package-kind">package</span></h5>
-    <ol>
-      <li class="section-title">Libraries</li>
-      <li><a href="../argon2_dart/argon2_dart-library.html">argon2_dart</a></li>
-</ol>
-
-  </div>
-
   <div id="dartdoc-main-content" class="main-content">
       <div>
 <h1><span class="kind-library">argon2_dart</span> library 
@@ -83,16 +63,24 @@
 
       <dl>
         <dt id="DArgon2">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">DArgon2</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">DArgon2</a></span> 
 
 </dt>
 <dd>
   A class that houses all of the methods to hash and verify a password using
-the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password hashing algorithm. <a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">[...]</a>
+the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password hashing algorithm. <a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">[...]</a>
+</dd>
+
+        <dt id="DArgon2Native">
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/2.0.1/dargon2_core/DArgon2Native-class.html">DArgon2Native</a></span> 
+
+</dt>
+<dd>
+   
 </dd>
 
         <dt id="DArgon2Result">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Result-class.html">DArgon2Result</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></span> 
 
 </dt>
 <dd>
@@ -101,7 +89,7 @@ Allows for a user to get various values from the List<int> <code>_bytes</code> a
 </dd>
 
         <dt id="Salt">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Salt-class.html">Salt</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Salt-class.html">Salt</a></span> 
 
 </dt>
 <dd>
@@ -122,11 +110,11 @@ or create a new salt with secure random bytes.</int>
       <dl class="properties">
         <dt id="argon2" class="property">
   <span class="name"><a href="../argon2_dart/argon2.html">argon2</a></span>
-  <span class="signature">&#8594; <a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">DArgon2</a></span> 
+  <span class="signature">&#8594; <a href="https://pub.dev/documentation/dargon2_core/2.0.1/dargon2_core/DArgon2Native-class.html">DArgon2Native</a></span> 
 
 </dt>
 <dd>
-  The globally accessible instance of <a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">DArgon2</a> with Dart
+  The globally accessible instance of <a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">DArgon2</a> with Dart
 native library loading 
   <div class="features">final</div>
 
@@ -141,7 +129,7 @@ native library loading
 
       <dl>
         <dt id="Argon2Type">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Argon2Type-class.html">Argon2Type</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Argon2Type.html">Argon2Type</a></span> 
 
 </dt>
 <dd>
@@ -149,7 +137,7 @@ native library loading
 </dd>
 
         <dt id="Argon2Version">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Argon2Version-class.html">Argon2Version</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Argon2Version.html">Argon2Version</a></span> 
 
 </dt>
 <dd>
@@ -157,7 +145,7 @@ native library loading
 </dd>
 
         <dt id="DArgon2ErrorCode">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2ErrorCode-class.html">DArgon2ErrorCode</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></span> 
 
 </dt>
 <dd>
@@ -175,12 +163,12 @@ as used to retrieve the error message from the C library.
 
       <dl>
         <dt id="DArgon2Exception">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Exception-class.html">DArgon2Exception</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></span> 
 
 </dt>
 <dd>
   A generic exception class to present each of the thrown exceptions from
-the Argon2 Library to allow users to know exactly what errored <a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Exception-class.html">[...]</a>
+the Argon2 Library to allow users to know exactly what errored <a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Exception-class.html">[...]</a>
 </dd>
 
       </dl>
@@ -188,13 +176,35 @@ the Argon2 Library to allow users to know exactly what errored <a href="https://
 
   </div> <!-- /.main-content -->
 
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../index.html">dargon2</a></li>
+  <li class="self-crumb">argon2_dart library</li>
+</ol>
+
+
+    <h5><span class="package-name">dargon2</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../argon2_dart/argon2_dart-library.html">argon2_dart</a></li>
+</ol>
+
+  </div>
+
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <h5>argon2_dart library</h5>
     <ol>
   <li class="section-title"><a href="../argon2_dart/argon2_dart-library.html#classes">Classes</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">DArgon2</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Result-class.html">DArgon2Result</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Salt-class.html">Salt</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">DArgon2</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_core/2.0.1/dargon2_core/DArgon2Native-class.html">DArgon2Native</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Salt-class.html">Salt</a></li>
 
 
 
@@ -204,13 +214,13 @@ the Argon2 Library to allow users to know exactly what errored <a href="https://
 
 
   <li class="section-title"><a href="../argon2_dart/argon2_dart-library.html#enums">Enums</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Argon2Type-class.html">Argon2Type</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Argon2Version-class.html">Argon2Version</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2ErrorCode-class.html">DArgon2ErrorCode</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Argon2Type.html">Argon2Type</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Argon2Version.html">Argon2Version</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></li>
 
 
   <li class="section-title"><a href="../argon2_dart/argon2_dart-library.html#exceptions">Exceptions</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Exception-class.html">DArgon2Exception</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></li>
 </ol>
 
   </div><!--/sidebar-offcanvas-right-->
@@ -220,15 +230,16 @@ the Argon2 Library to allow users to know exactly what errored <a href="https://
 <footer>
   <span class="no-break">
     dargon2
-      2.1.0
+      3.0.0
   </span>
 
   
 </footer>
 
 
-<script src="../static-assets/highlight.pack.js"></script>
-<script src="../static-assets/script.js"></script>
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/script.js?v1"></script>
 
 
 
