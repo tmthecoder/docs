@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="generator" content="made with love by dartdoc 0.44.0">
+  <meta name="generator" content="made with love by dartdoc 4.1.0">
   <meta name="description" content="dargon2_flutter API docs, for the Dart programming language.">
   <title>dargon2_flutter - Dart API docs</title>
 
@@ -47,7 +47,19 @@
   <h1 id="dargon2_flutter">dargon2_flutter</h1>
 <p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></p>
 <p>A plugin to handle dart:ffi integrations for iOS and Android for argon2 password hashing in Flutter Applications.
-Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a>, winner of the <a href="https://password-hashing.net">Password Hash Competition</a></p>
+Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a>, winner of the <a href="https://password-hashing.net">Password Hash Competition</a> in mobile implementations while using <a href="https://github.com/Daninet/hash-wasm">hash-wasm</a>'s WebAssembly argon2 implementation on web.</p>
+<h2 id="flutter-version-under-28">Flutter version under 2.8</h2>
+<p>If you're building with a Flutter version under 2.8 (or you get an <code>UnimplementedError</code> on use), add this line into your application entrypoint (usually <code>main()</code> in <code>main.dart</code>):</p>
+<pre class="language-dart"><code class="language-dart">void main() {
+  DArgon2Flutter.init();
+  runApp(MyApp());
+}
+</code></pre>
+<h2 id="web-only">Web Only</h2>
+<p>If you plan to use this plugin in a web context, you must add the hash-wasm Argon2 JavaScript library to your program.</p>
+<p>Insert the following line into your index.html:</p>
+<pre class="language-html"><code class="language-html">&lt;script src="https://cdn.jsdelivr.net/npm/hash-wasm@4.8.0/dist/argon2.umd.min.js"&gt;&lt;/script&gt;
+</code></pre>
 <h2 id="pure-objective-c-ios">Pure Objective-C iOS</h2>
 <p>If you're using Objective-C for the iOS portion of your application (created with Objective-C and no Swift code), there's a few extra steps:</p>
 <ul>
@@ -64,19 +76,19 @@ Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-win
    var password = 'password';
    //use Salt(List&lt;int&gt; bytes) for a salt from an Integer list
    var s = Salt.newSalt();
-   //Hash with pre-set params (iterations: 32, memory: 256, parallelism: 2, 
+   //Hash with pre-set params (iterations: 32, memory: 256, parallelism: 2,
    //length: 32, type: Argon2Type.i, version: Argon2Version.V13)
    var result = await argon2.hashPasswordString(password, salt: s);
-   
+
    //Raw hash values available as int list, base 64 string, and hex string
    var bytesRaw = result.rawBytes;
    var base64Hash = result.base64String;
    var hexHash = result.hexString;
-   
+
    //Encoded hash values available as int list and encoded string
    var bytesEncoded = result.encodedBytes;
    var stringEncoded = result.encodedString;
-   
+
    //Verify password (returns true/false), uses default type (Argon2Type.i)
    var verified = await argon2.verifyHashString(password, stringEncoded);
 }
@@ -85,9 +97,10 @@ Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-win
 <p>Please file feature requests and bugs at the <a href="https://github.com/tmthecoder/dargon2_flutter/issues">issue tracker</a>.</p>
 <h2 id="licensing">Licensing</h2>
 <ul>
-<li>dargon2_flutter is Licensed under the <a href="https://github.com/tmthecoder/dargon2_flutter/blob/main/LICENSE">MIT License</a></li>
+<li>dargon2_flutter and all platform implementations are Licensed under the <a href="https://github.com/tmthecoder/dargon2_flutter/blob/main/LICENSE">MIT License</a></li>
 <li>dargon2_core is Licensed under the <a href="https://github.com/tmthecoder/dargon2_core/blob/main/LICENSE">MIT License</a></li>
 <li>The C implementation of <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> is licensed under a dual <a href="https://github.com/P-H-C/phc-winner-argon2/blob/master/LICENSE">Apache and CC0 License</a></li>
+<li><a href="https://github.com/Daninet/hash-wasm">hash-wasm</a> is licensed under the <a href="https://github.com/Daninet/hash-wasm/blob/master/LICENSE">MIT License</a></li>
 </ul>
 </section>
 
@@ -99,8 +112,9 @@ Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-win
   <span class="name"><a href="dargon2_flutter/dargon2_flutter-library.html">dargon2_flutter</a></span> 
 
 </dt>
-<dd>All of the actual hashing and dart:ffi code is located in the <a href="https://pub.dev/documentation/dargon2/latest/">dargon2</a> plugin. To view the api reference
-for the actual hashing methods, take a look at dargon2's API Reference <a href="dargon2_flutter/dargon2_flutter-library.html">[...]</a>
+<dd>This plugin is the federated plugin for argon2 hashing functionality in Flutter.
+It utilizes the Argon2 C reference implementation for mobile and the hash-wasm
+WebAssembly implementation for web. <a href="dargon2_flutter/dargon2_flutter-library.html">[...]</a>
 </dd>
 
         </dl>
@@ -136,7 +150,7 @@ for the actual hashing methods, take a look at dargon2's API Reference <a href="
 <footer>
   <span class="no-break">
     dargon2_flutter
-      2.1.0
+      3.0.0
   </span>
 
   

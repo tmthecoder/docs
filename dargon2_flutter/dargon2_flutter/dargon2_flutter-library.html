@@ -50,10 +50,10 @@
 
     
 <section class="desc markdown">
-  <p>All of the actual hashing and dart:ffi code is located in the <a href="https://pub.dev/documentation/dargon2/latest/">dargon2</a> plugin. To view the api reference
-for the actual hashing methods, take a look at dargon2's API Reference</p>
-<p>This is a wrapper library to hash and verify strings using the Argon2 hashing algorithm</p>
-<p>To use this library in your code:</p>
+  <p>This plugin is the federated plugin for argon2 hashing functionality in Flutter.
+It utilizes the Argon2 C reference implementation for mobile and the hash-wasm
+WebAssembly implementation for web.</p>
+<p>To use this library in your code, add the following import:</p>
 <pre class="language-dart"><code>import 'package:dargon2_flutter/dartgon2_flutter.dart';
 </code></pre>
 <p>For detailed usage please look at the example</p>
@@ -65,16 +65,24 @@ for the actual hashing methods, take a look at dargon2's API Reference</p>
 
       <dl>
         <dt id="DArgon2">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">DArgon2</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">DArgon2</a></span> 
 
 </dt>
 <dd>
   A class that houses all of the methods to hash and verify a password using
-the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password hashing algorithm. <a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">[...]</a>
+the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password hashing algorithm. <a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">[...]</a>
+</dd>
+
+        <dt id="DArgon2Flutter">
+  <span class="name "><a href="../dargon2_flutter/DArgon2Flutter-class.html">DArgon2Flutter</a></span> 
+
+</dt>
+<dd>
+   
 </dd>
 
         <dt id="DArgon2Result">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Result-class.html">DArgon2Result</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></span> 
 
 </dt>
 <dd>
@@ -83,7 +91,7 @@ Allows for a user to get various values from the List<int> <code>_bytes</code> a
 </dd>
 
         <dt id="Salt">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Salt-class.html">Salt</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Salt-class.html">Salt</a></span> 
 
 </dt>
 <dd>
@@ -103,13 +111,14 @@ or create a new salt with secure random bytes.</int>
 
       <dl class="properties">
         <dt id="argon2" class="property">
-  <span class="name"><a href="../dargon2_flutter/argon2.html">argon2</a></span>
-  <span class="signature">&#8594; <a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">DArgon2</a></span> 
+  <span class="name"><a href="https://pub.dev/documentation/dargon2_flutter_platform_interface/3.0.1/dargon2_flutter_platform/argon2.html">argon2</a></span>
+  <span class="signature">&#8596; <a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">DArgon2</a></span> 
 
 </dt>
 <dd>
-  The globally accessible instance of <a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">DArgon2</a> with Flutter library loading 
-  <div class="features">final</div>
+  The globally accessible instance of <a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">DArgon2</a>. It provides all hashing and
+verification functionality. 
+  <div class="features">read / write</div>
 
 </dd>
 
@@ -122,7 +131,7 @@ or create a new salt with secure random bytes.</int>
 
       <dl>
         <dt id="Argon2Type">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Argon2Type-class.html">Argon2Type</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Argon2Type.html">Argon2Type</a></span> 
 
 </dt>
 <dd>
@@ -130,7 +139,7 @@ or create a new salt with secure random bytes.</int>
 </dd>
 
         <dt id="Argon2Version">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Argon2Version-class.html">Argon2Version</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Argon2Version.html">Argon2Version</a></span> 
 
 </dt>
 <dd>
@@ -138,7 +147,7 @@ or create a new salt with secure random bytes.</int>
 </dd>
 
         <dt id="DArgon2ErrorCode">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2ErrorCode-class.html">DArgon2ErrorCode</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></span> 
 
 </dt>
 <dd>
@@ -156,12 +165,12 @@ as used to retrieve the error message from the C library.
 
       <dl>
         <dt id="DArgon2Exception">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Exception-class.html">DArgon2Exception</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></span> 
 
 </dt>
 <dd>
   A generic exception class to present each of the thrown exceptions from
-the Argon2 Library to allow users to know exactly what errored <a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Exception-class.html">[...]</a>
+the Argon2 Library to allow users to know exactly what errored <a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Exception-class.html">[...]</a>
 </dd>
 
       </dl>
@@ -194,25 +203,26 @@ the Argon2 Library to allow users to know exactly what errored <a href="https://
     <h5>dargon2_flutter library</h5>
     <ol>
   <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#classes">Classes</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2-class.html">DArgon2</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Result-class.html">DArgon2Result</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Salt-class.html">Salt</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2-class.html">DArgon2</a></li>
+  <li><a href="../dargon2_flutter/DArgon2Flutter-class.html">DArgon2Flutter</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Salt-class.html">Salt</a></li>
 
 
 
 
   <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#properties">Properties</a></li>
-  <li><a href="../dargon2_flutter/argon2.html">argon2</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_flutter_platform_interface/3.0.1/dargon2_flutter_platform/argon2.html">argon2</a></li>
 
 
   <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#enums">Enums</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Argon2Type-class.html">Argon2Type</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/Argon2Version-class.html">Argon2Version</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2ErrorCode-class.html">DArgon2ErrorCode</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Argon2Type.html">Argon2Type</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/Argon2Version.html">Argon2Version</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></li>
 
 
   <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#exceptions">Exceptions</a></li>
-  <li><a href="https://pub.dev/documentation/dargon2_core/1.0.0/dargon2_core/DArgon2Exception-class.html">DArgon2Exception</a></li>
+  <li><a href="https://pub.dev/documentation/dargon2_interface/1.0.0/dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></li>
 </ol>
 
   </div><!--/sidebar-offcanvas-right-->
@@ -222,7 +232,7 @@ the Argon2 Library to allow users to know exactly what errored <a href="https://
 <footer>
   <span class="no-break">
     dargon2_flutter
-      2.1.0
+      3.0.0
   </span>
 
   
