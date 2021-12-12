@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 4.1.0">
+  <meta name="description" content="dargon2_interface API docs, for the Dart programming language.">
+  <title>dargon2_interface - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href=""
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/tmthecoder/dargon2_interface">dargon2_interface package</a></li>
+  </ol>
+  <div class="self-name">dargon2_interface</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h2 id="dargon2_interface">dargon2_interface</h2>
+<p>This library generally should not be used in most contexts</p>
+<p>This library only provides an interface to implement a dargon2-compatible argon2 hash binding.</p>
+<p>This library is used by <code>dargon2_core</code> and <code>dargon2_flutter_web</code> to maintain cross-platform hashing functionality.</p>
+<h2 id="usage">Usage</h2>
+<p>A simple usage example:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:dargon2_interface/dargon2_interface.dart';
+
+void main() {
+  // Create an instance of TestDArgon2
+  var dargon2 = TestDArgon2();
+}
+
+class TestDArgon2 extends DArgon2 {
+  @override
+  Future&lt;DArgon2Result&gt; hashPasswordBytes(List&lt;int&gt; password, {required Salt salt, int iterations = 32, int memory = 256, int parallelism = 2, int length = 32, Argon2Type type = Argon2Type.i, Argon2Version version = Argon2Version.V13}) {
+    // Create an implementation for hashing passwords with the given parameters
+    throw UnimplementedError();
+  }
+
+  @override
+  Future&lt;bool&gt; verifyHashBytes(List&lt;int&gt; password, List&lt;int&gt; encodedHash, {Argon2Type type = Argon2Type.i}) {
+    // Create an implementation for verifying passwords with the given parameters
+    throw UnimplementedError();
+  }
+}
+</code></pre>
+<h2 id="features-and-bugs">Features and bugs</h2>
+<p>Please file feature requests and bugs at the <a href="https://github.com/tmthecoder/dargon2_interface/issues">issue tracker</a>.</p>
+<h2 id="licensing">Licensing</h2>
+<ul>
+<li>dargon2_core is Licensed under the <a href="https://github.com/tmthecoder/dargon2_interface/blob/main/LICENSE">MIT License</a></li>
+<li>The C implementation of <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> is licensed under a dual <a href="https://github.com/P-H-C/phc-winner-argon2/blob/master/LICENSE">Apache and CC0 License</a></li>
+</ul>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="dargon2_interface">
+  <span class="name"><a href="dargon2_interface/dargon2_interface-library.html">dargon2_interface</a></span> 
+
+</dt>
+<dd>Support for doing something awesome. <a href="dargon2_interface/dargon2_interface-library.html">[...]</a>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://github.com/tmthecoder/dargon2_interface">dargon2_interface package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">dargon2_interface</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="dargon2_interface/dargon2_interface-library.html">dargon2_interface</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    dargon2_interface
+      1.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
