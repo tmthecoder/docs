@@ -96,7 +96,7 @@ Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-win
 <h2 id="special-usage---isolatescompute">Special Usage - Isolates/Compute</h2>
 <p>When using dargon2_flutter within Dart Isolates, an additional step must be taken or an <code>UnimplementedError</code> will be thrown.</p>
 <p>The method that will be called in the Isolate must call <code>DArgon2Flutter.init()</code></p>
-<p>It should follow this example:</p>
+<p>It should follow this example (with the full program in the example folder):</p>
 <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; hashWithArgon2Isolate(Map map) async {
   DArgon2Flutter.init();
   DArgon2Result result =
