@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TOTP","A TOTP generator"]]});

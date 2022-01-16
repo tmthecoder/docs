@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["HOTP","A HOTP Generator"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["MacDigest","The digest to use with TOTP"]]});
