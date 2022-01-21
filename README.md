@@ -16,10 +16,10 @@ Here's all of the currently hosted ones:
 
 If you're interested, their GitHub Repos are here:
 
-- [dargon2](https://github.com/tmthecoder/dargon2)
-- [dargon2_core](https://github.com/tmthecoder/dargon2_core)
-- [dargon2_flutter](https://github.com/tmthecoder/dargon2_flutter)
-- [dargon2_interface](https://github.com/tmthecoder/dargon2_interface)
+- [dargon2](https://github.com/tmthecoder/dargon2/blob/main/dargon2)
+- [dargon2_core](https://github.com/tmthecoder/dargon2/blob/main/dargon2_core)
+- [dargon2_flutter](https://github.com/tmthecoder/dargon2/blob/main/dargon2_flutter)
+- [dargon2_interface](https://github.com/tmthecoder/dargon2/blob/main/dargon2_interface)
 - [Argon2Swift](https://github.com/tmthecoder/Argon2Swift)
 - [OdometryCore](https://github.com/tmthecoder/OdometryCore)
 - [xotp](https://github.com/tmthecoder/xotp)
