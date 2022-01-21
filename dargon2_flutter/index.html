@@ -66,7 +66,7 @@ Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-win
 <li>You don't have to add anything to that swift file or the bridging header, but it needs to be there along with the bridging header in order for the plugin to compile correctly for iOS</li>
 </ul>
 <h2 id="usage">Usage</h2>
-<p>High-level hashing and verification (for direct hashing &amp; verification of byte arrays, check the example on <a href="https://github.com/tmthecoder/dargon2">dargon2</a>)</p>
+<p>High-level hashing and verification (for direct hashing &amp; verification of byte arrays, check the example on <code>dargon2</code>)</p>
 <pre class="language-dart"><code class="language-dart">void _hash() async {
    var password = 'password';
    //use Salt(List&lt;int&gt; bytes) for a salt from an Integer list
@@ -102,11 +102,12 @@ Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-win
 }
 </code></pre>
 <h2 id="features-and-bugs">Features and bugs</h2>
-<p>Please file feature requests and bugs at the <a href="https://github.com/tmthecoder/dargon2_flutter/issues">issue tracker</a>.</p>
+<p>Please file feature requests and bugs at the <a href="https://github.com/tmthecoder/dargon2/issues">issue tracker</a>.</p>
+<p>Please mark all dargon2_flutter issues with <code>[dargon2_flutter]</code> prepended to the issue title</p>
 <h2 id="licensing">Licensing</h2>
 <ul>
 <li>dargon2_flutter and all platform implementations are Licensed under the <a href="https://github.com/tmthecoder/dargon2_flutter/blob/main/LICENSE">MIT License</a></li>
-<li>dargon2_core is Licensed under the <a href="https://github.com/tmthecoder/dargon2_core/blob/main/LICENSE">MIT License</a></li>
+<li>dargon2_core is Licensed under the <a href="https://github.com/tmthecoder/dargon2/blob/main/dargon2_core/LICENSE">MIT License</a></li>
 <li>The C implementation of <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> is licensed under a dual <a href="https://github.com/P-H-C/phc-winner-argon2/blob/master/LICENSE">Apache and CC0 License</a></li>
 <li><a href="https://github.com/Daninet/hash-wasm">hash-wasm</a> is licensed under the <a href="https://github.com/Daninet/hash-wasm/blob/master/LICENSE">MIT License</a></li>
 </ul>
