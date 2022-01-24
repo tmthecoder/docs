@@ -30,7 +30,7 @@
 <header id="title">
   <button id="sidenav-left-toggle" type="button">&nbsp;</button>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
-    <li><a href="https://github.com/tmthecoder/dargon2_flutter">dargon2_flutter package</a></li>
+    <li><a href="https://github.com/tmthecoder/dargon2/blob/main/dargon2_flutter">dargon2_flutter package</a></li>
   </ol>
   <div class="self-name">dargon2_flutter</div>
   <form class="search navbar-right" role="search">
@@ -65,6 +65,10 @@ Uses the reference C implementation of <a href="https://github.com/P-H-C/phc-win
 <li>(<strong>This is the Important Step</strong>) Select <code>Create Bridging Header</code> when the prompt comes up</li>
 <li>You don't have to add anything to that swift file or the bridging header, but it needs to be there along with the bridging header in order for the plugin to compile correctly for iOS</li>
 </ul>
+<h2 id="desktop-linux">Desktop (Linux)</h2>
+<p>When building on Linux utilizng <code>dargon2_flutter</code>, the C standard library must be installed.
+I recommend ensuring it's installed by running <code>sudo apt install build-essential</code> or your distro's equivalent</p>
+<p>Otherwise, the underlying C implementation will not build successfully, causing a cascading build failure.</p>
 <h2 id="usage">Usage</h2>
 <p>High-level hashing and verification (for direct hashing &amp; verification of byte arrays, check the example on <code>dargon2</code>)</p>
 <pre class="language-dart"><code class="language-dart">void _hash() async {
@@ -139,7 +143,7 @@ WebAssembly implementation for web. <a href="dargon2_flutter/dargon2_flutter-lib
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="https://github.com/tmthecoder/dargon2_flutter">dargon2_flutter package</a></li>
+  <li><a href="https://github.com/tmthecoder/dargon2/blob/main/dargon2_flutter">dargon2_flutter package</a></li>
 </ol>
 
 
@@ -159,7 +163,7 @@ WebAssembly implementation for web. <a href="dargon2_flutter/dargon2_flutter-lib
 <footer>
   <span class="no-break">
     dargon2_flutter
-      3.0.3
+      3.1.0
   </span>
 
   
