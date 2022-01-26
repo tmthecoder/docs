@@ -104,13 +104,24 @@
 <span id="103">103</span>
 <span id="104">104</span>
 <span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
 </pre><pre class="rust"><code><span class="comment">// Implementation of the HOTP standard according to RFC4226 by Tejas Mehta</span>
 
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::util</span>::{<span class="ident">base32_decode</span>, <span class="ident">get_code</span>, <span class="ident">hash_generic</span>, <span class="ident">MacDigest</span>};
 
 <span class="doccomment">/// A HOTP Generator</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// Follows the specification listed in [RFC4226]. Needs a secret and a number of digits on initialization.</span>
+<span class="doccomment">/// Follows the specification listed in [RFC4226]. Needs a secret and</span>
+<span class="doccomment">/// digit count on initialization.</span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// The HOTP can then be generated using [`HOTP::get_otp`].</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// # Example</span>
@@ -126,8 +137,8 @@
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">HOTP</span> {
     <span class="doccomment">/// The secret key used in the HMAC process.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Often given as a Base32 key, which can be conveniently initialize using</span>
-    <span class="doccomment">/// the [`HOTP::from_base32`] constructors.</span>
+    <span class="doccomment">/// Often given as a Base32 key, which can be conveniently initialized</span>
+    <span class="doccomment">/// using the [`HOTP::default_from_base32`] constructor.</span>
     <span class="ident">secret</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">u8</span><span class="op">&gt;</span>,
 
     <span class="doccomment">/// The number of digits of the code generated.</span>
@@ -139,7 +150,7 @@
 <span class="doccomment">/// All initializer implementations for the [`HOTP`] struct.</span>
 <span class="kw">impl</span> <span class="ident">HOTP</span> {
     <span class="doccomment">/// Creates a new HOTP instance with a byte-array representation</span>
-    <span class="doccomment">/// of the secret and the number of digits.</span>
+    <span class="doccomment">/// of the secret and specified digit count.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// Since only SHA1 was specified in the reference implementation and</span>
     <span class="doccomment">/// RFC specification, there&#39;s no need to initialize with a digest object.</span>
@@ -150,40 +161,47 @@
         }
     }
 
-    <span class="doccomment">/// Creates a new HOTP instance from an utf8-encoded string secret and the number of digits.</span>
+    <span class="doccomment">/// Creates a new HOTP instance from a utf8-encoded string secret</span>
+    <span class="doccomment">/// and specified digit count.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_from_utf8</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">digits</span>: <span class="ident">u32</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">HOTP::new</span>(<span class="ident">secret</span>.<span class="ident">as_bytes</span>(), <span class="ident">digits</span>)
     }
 
-    <span class="doccomment">/// Creates a new HOTP instance from a base32-encoded string secret and the number of digits.</span>
+    <span class="doccomment">/// Creates a new HOTP instance from a base32-encoded string secret</span>
+    <span class="doccomment">/// and specified digit count.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Panics</span>
-    <span class="doccomment">/// This method panics if the provided string is not correctly base32 encoded.</span>
+    <span class="doccomment">/// This method panics if the provided string is not correctly</span>
+    <span class="doccomment">/// base32-encoded.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_from_base32</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">digits</span>: <span class="ident">u32</span>) -&gt; <span class="self">Self</span> {
         <span class="kw">let</span> <span class="ident">decoded</span> <span class="op">=</span> <span class="ident">base32_decode</span>(<span class="ident">secret</span>).<span class="ident">expect</span>(<span class="string">&quot;Failed to decode base32 string&quot;</span>);
         <span class="ident">HOTP::new</span>(<span class="kw-2">&amp;</span><span class="ident">decoded</span>, <span class="ident">digits</span>)
     }
 
-    <span class="doccomment">/// Creates a new HOTP instance from a byte-array representation of the secret and</span>
-    <span class="doccomment">/// a default number of 6 digits.</span>
+    <span class="doccomment">/// Creates a new HOTP instance from a byte-array representation of</span>
+    <span class="doccomment">/// the secret and a default digit count of 6.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_secret</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>]) -&gt; <span class="self">Self</span> {
         <span class="ident">HOTP::new</span>(<span class="ident">secret</span>, <span class="number">6</span>)
     }
 
-    <span class="doccomment">/// Creates a new HOTP instance from an utf8-encoded string secret and a default number of 6 digits.</span>
+    <span class="doccomment">/// Creates a new HOTP instance from an utf8-encoded string secret</span>
+    <span class="doccomment">/// and a default digit count of 6..</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_utf8</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">HOTP::new_from_utf8</span>(<span class="ident">secret</span>, <span class="number">6</span>)
     }
 
-    <span class="doccomment">/// Creates a new HOTP instance from a base32-encoded string secret and a default number of 6 digits.</span>
+    <span class="doccomment">/// Creates a new HOTP instance from a base32-encoded string secret</span>
+    <span class="doccomment">/// and a default digit count of 6..</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Panics</span>
-    <span class="doccomment">/// This method panics if the provided string is not correctly base32 encoded.</span>
+    <span class="doccomment">/// This method panics if the provided string is not correctly</span>
+    <span class="doccomment">/// base32-encoded.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_base32</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">HOTP::new_from_base32</span>(<span class="ident">secret</span>, <span class="number">6</span>)
     }
 }
 
+<span class="doccomment">/// All getters for the [&#39;HOTP&#39;] struct</span>
 <span class="kw">impl</span> <span class="ident">HOTP</span> {
     <span class="doccomment">/// Gets the number of digits of the code.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_digits</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">u32</span> {

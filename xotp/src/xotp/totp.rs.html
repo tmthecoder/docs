@@ -175,12 +175,23 @@
 <span id="174">174</span>
 <span id="175">175</span>
 <span id="176">176</span>
+<span id="177">177</span>
+<span id="178">178</span>
+<span id="179">179</span>
+<span id="180">180</span>
+<span id="181">181</span>
+<span id="182">182</span>
+<span id="183">183</span>
+<span id="184">184</span>
+<span id="185">185</span>
+<span id="186">186</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::util</span>::{<span class="ident">base32_decode</span>, <span class="ident">get_code</span>, <span class="ident">hash_generic</span>, <span class="ident">MacDigest</span>};
 
 <span class="doccomment">/// A TOTP generator</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// Follows the specification listed in [RFC6238]. Needs a secret,</span>
 <span class="doccomment">/// a digest algorithm, a number of digits and a period on initialization.</span>
+<span class="doccomment">///</span>
 <span class="doccomment">/// The TOTP can then be generated using [`TOTP::get_otp`] or</span>
 <span class="doccomment">/// [`TOTP::get_otp_with_custom_time_start`].</span>
 <span class="doccomment">///</span>
@@ -196,13 +207,14 @@
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">TOTP</span> {
     <span class="doccomment">/// The secret key used in the HMAC process.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Often given as a Base32 key, which can be conveniently initialized using</span>
-    <span class="doccomment">/// [`TOTP::default_from_base32`] constructors.</span>
+    <span class="doccomment">/// Often given as a Base32 key, which can be conveniently initialized</span>
+    <span class="doccomment">/// using the [`TOTP::default_from_base32`] constructor.</span>
     <span class="ident">secret</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">u8</span><span class="op">&gt;</span>,
 
     <span class="doccomment">/// The digest to use in the HMAC process.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// This value defaults to [`MacDigest::SHA1`] if not specified in a constructor.</span>
+    <span class="doccomment">/// This value defaults to [`MacDigest::SHA1`] if not specified in a</span>
+    <span class="doccomment">/// constructor.</span>
     <span class="ident">mac_digest</span>: <span class="ident">MacDigest</span>,
 
     <span class="doccomment">/// The number of digits of the code generated.</span>
@@ -216,10 +228,11 @@
     <span class="ident">period</span>: <span class="ident">u64</span>,
 }
 
-<span class="comment">// All initializer implementations for the [`TOTP`] struct</span>
+<span class="doccomment">/// All initializer implementations for the [`TOTP`] struct</span>
 <span class="kw">impl</span> <span class="ident">TOTP</span> {
-    <span class="doccomment">/// Generates a new TOTP instance from a byte array representation of the secret,</span>
-    <span class="doccomment">/// a digest algorithm, a number of digits and a period in seconds.</span>
+    <span class="doccomment">/// Generates a new TOTP instance from a byte array representation of the</span>
+    <span class="doccomment">/// secret, a digest algorithm, a number of digits,</span>
+    <span class="doccomment">/// and a period in seconds.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>], <span class="ident">mac_digest</span>: <span class="ident">MacDigest</span>, <span class="ident">digits</span>: <span class="ident">u32</span>, <span class="ident">period</span>: <span class="ident">u64</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">TOTP</span> {
             <span class="ident">secret</span>: <span class="ident">secret</span>.<span class="ident">to_vec</span>(),
@@ -229,14 +242,16 @@
         }
     }
 
-    <span class="doccomment">/// Generates a new TOTP instance from an utf8 representation of the secret,</span>
-    <span class="doccomment">/// a digest algorithm, a number of digits and a period in seconds.</span>
+    <span class="doccomment">/// Generates a new TOTP instance from an utf8 representation of the</span>
+    <span class="doccomment">/// secret, a digest algorithm, a number of digits,</span>
+    <span class="doccomment">/// and a period in seconds.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_from_utf8</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">mac_digest</span>: <span class="ident">MacDigest</span>, <span class="ident">digits</span>: <span class="ident">u32</span>, <span class="ident">period</span>: <span class="ident">u64</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">TOTP::new</span>(<span class="ident">secret</span>.<span class="ident">as_bytes</span>(), <span class="ident">mac_digest</span>, <span class="ident">digits</span>, <span class="ident">period</span>)
     }
 
-    <span class="doccomment">/// Generates a new TOTP instance from a base32 representation of the secret,</span>
-    <span class="doccomment">/// a digest algorithm, a number of digits and a period in seconds.</span>
+    <span class="doccomment">/// Generates a new TOTP instance from a base32-encoded representation of</span>
+    <span class="doccomment">/// the secret, a digest algorithm, a number of digits,</span>
+    <span class="doccomment">/// and a period in seconds.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Panics</span>
     <span class="doccomment">/// This method panics if the provided string is not correctly base32 encoded.</span>
@@ -245,26 +260,27 @@
         <span class="ident">TOTP::new</span>(<span class="kw-2">&amp;</span><span class="ident">decoded</span>, <span class="ident">mac_digest</span>, <span class="ident">digits</span>, <span class="ident">period</span>)
     }
 
-    <span class="doccomment">/// Creates a new TOTP instance with a byte-array representation of the secret.</span>
+    <span class="doccomment">/// Creates a new TOTP instance with a byte-array representation of the</span>
+    <span class="doccomment">/// secret.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Defaults to using [`MacDigest::SHA1`] as the digest for HMAC operations,</span>
-    <span class="doccomment">/// 6 digits and a 30 seconds period.</span>
+    <span class="doccomment">/// Defaults to using [`MacDigest::SHA1`] as the digest for HMAC</span>
+    <span class="doccomment">/// operations, with a 6-digit OTP output and a 30-second period.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_secret</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>]) -&gt; <span class="self">Self</span> {
         <span class="ident">TOTP::default_from_secret_with_digest</span>(<span class="ident">secret</span>, <span class="ident">MacDigest::SHA1</span>)
     }
 
-    <span class="doccomment">/// Creates a new TOTP instance with a byte-array representation of the secret and</span>
-    <span class="doccomment">/// a digest algorithm.</span>
+    <span class="doccomment">/// Creates a new TOTP instance with a byte-array representation of the</span>
+    <span class="doccomment">/// secret and a digest algorithm.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Defaults to using 6 digits and a 30 seconds period.</span>
+    <span class="doccomment">/// Defaults to a 6-digit OTP output and a 30-second period.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_secret_with_digest</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span>[<span class="ident">u8</span>], <span class="ident">mac_digest</span>: <span class="ident">MacDigest</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">TOTP::new</span>(<span class="ident">secret</span>, <span class="ident">mac_digest</span>, <span class="number">6</span>, <span class="number">30</span>)
     }
 
     <span class="doccomment">/// Creates a new TOTP instance with an utf8 representation of the secret.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Defaults to using [`MacDigest::SHA1`] as the digest for HMAC operations,</span>
-    <span class="doccomment">/// 6 digits and a 30 seconds period.</span>
+    <span class="doccomment">/// Defaults to using [`MacDigest::SHA1`] as the digest for HMAC</span>
+    <span class="doccomment">/// operations, with a 6-digit OTP output and a 30-second period.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_utf8</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">TOTP::default_from_utf8_with_digest</span>(<span class="ident">secret</span>, <span class="ident">MacDigest::SHA1</span>)
     }
@@ -272,29 +288,31 @@
     <span class="doccomment">/// Creates a new TOTP instance with an utf8 representation of the secret and</span>
     <span class="doccomment">/// a digest algorithm.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Defaults to using 6 digits and a 30 seconds period.</span>
+    <span class="doccomment">/// Defaults to a 6-digit OTP output and a 30-second period.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_utf8_with_digest</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">mac_digest</span>: <span class="ident">MacDigest</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">TOTP::new_from_utf8</span>(<span class="ident">secret</span>, <span class="ident">mac_digest</span>, <span class="number">6</span>, <span class="number">30</span>)
     }
 
     <span class="doccomment">/// Creates a new TOTP instance with a base32 representation of the secret.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Defaults to using [`MacDigest::SHA1`] as the digest for HMAC operations,</span>
-    <span class="doccomment">/// 6 digits and a 30 seconds period.</span>
+    <span class="doccomment">/// Defaults to using [`MacDigest::SHA1`] as the digest for HMAC</span>
+    <span class="doccomment">/// operations, with a 6-digit OTP output and a 30-second period.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Panics</span>
-    <span class="doccomment">/// This method panics if the provided string is not correctly base32 encoded.</span>
+    <span class="doccomment">/// This method panics if the provided string is not correctly</span>
+    <span class="doccomment">/// base32-encoded.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_base32</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">TOTP::default_from_base32_with_digest</span>(<span class="ident">secret</span>, <span class="ident">MacDigest::SHA1</span>)
     }
 
-    <span class="doccomment">/// Creates a new TOTP instance with a base32 representation of the secret and</span>
-    <span class="doccomment">/// a digest algorithm.</span>
+    <span class="doccomment">/// Creates a new TOTP instance with a base32 representation of the secret</span>
+    <span class="doccomment">/// and a digest algorithm.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// Defaults to using 6 digits and a 30 seconds period.</span>
+    <span class="doccomment">/// Defaults to a 6-digit OTP output and a 30-second period.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Panics</span>
-    <span class="doccomment">/// This method panics if the provided string is not correctly base32 encoded.</span>
+    <span class="doccomment">/// This method panics if the provided string is not correctly</span>
+    <span class="doccomment">/// base32-encoded.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">default_from_base32_with_digest</span>(<span class="ident">secret</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">mac_digest</span>: <span class="ident">MacDigest</span>) -&gt; <span class="self">Self</span> {
         <span class="ident">TOTP::new_from_base32</span>(<span class="ident">secret</span>, <span class="ident">mac_digest</span>, <span class="number">6</span>, <span class="number">30</span>)
     }
@@ -312,7 +330,7 @@
         <span class="self">self</span>.<span class="ident">digits</span>
     }
 
-    <span class="doccomment">/// Gets the period between different generated code.</span>
+    <span class="doccomment">/// Gets the period between code changes.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_period</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">u64</span> {
         <span class="self">self</span>.<span class="ident">period</span>
     }
@@ -322,18 +340,20 @@
 <span class="kw">impl</span> <span class="ident">TOTP</span> {
     <span class="doccomment">/// Generates and returns the TOTP value for the specified time.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// The time must be specified in seconds to calculate the correct one-time password.</span>
+    <span class="doccomment">/// The time must be specified in seconds to calculate the correct</span>
+    <span class="doccomment">/// one-time password.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Panics</span>
-    <span class="doccomment">/// This method panics if the called [`TOTP::get_otp_with_custom_time_start`] method</span>
-    <span class="doccomment">/// does, which would happen if the hash&#39;s secret is incorrectly given.</span>
+    <span class="doccomment">/// This method panics if the [`TOTP::get_otp_with_custom_time_start`]</span>
+    <span class="doccomment">/// method does, which happens if the hash&#39;s secret is incorrectly given.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_otp</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">time</span>: <span class="ident">u64</span>) -&gt; <span class="ident">u32</span> {
         <span class="self">self</span>.<span class="ident">get_otp_with_custom_time_start</span>(<span class="ident">time</span>, <span class="number">0</span>)
     }
 
     <span class="doccomment">/// Generates and returns the TOTP value for the specified time.</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// The time must be specified in seconds to calculate the correct one-time password.</span>
+    <span class="doccomment">/// The time must be specified in seconds to calculate the correct</span>
+    <span class="doccomment">/// one-time password.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// This method allows a custom start time to be provided.</span>
     <span class="doccomment">///</span>
