@@ -103,6 +103,7 @@
 <span id="102">102</span>
 <span id="103">103</span>
 <span id="104">104</span>
+<span id="105">105</span>
 </pre><pre class="rust"><code><span class="comment">// Implementation of the HOTP standard according to RFC4226 by Tejas Mehta</span>
 
 <span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::util</span>::{<span class="ident">base32_decode</span>, <span class="ident">get_code</span>, <span class="ident">hash_generic</span>, <span class="ident">MacDigest</span>};
@@ -121,6 +122,7 @@
 <span class="doccomment">/// [RFC4226]: https://datatracker.ietf.org/doc/html/rfc4226</span>
 
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Hash</span>)]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;ffi&quot;</span>, <span class="ident">repr</span>(<span class="ident">C</span>))]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">HOTP</span> {
     <span class="doccomment">/// The secret key used in the HMAC process.</span>
     <span class="doccomment">///</span>

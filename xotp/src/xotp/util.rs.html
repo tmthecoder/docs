@@ -183,6 +183,10 @@
 <span id="182">182</span>
 <span id="183">183</span>
 <span id="184">184</span>
+<span id="185">185</span>
+<span id="186">186</span>
+<span id="187">187</span>
+<span id="188">188</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">base32::Alphabet</span>;
 <span class="kw">use</span> <span class="ident">hmac</span>::{<span class="ident">Hmac</span>, <span class="ident">Mac</span>};
 <span class="kw">use</span> <span class="ident">sha1::Sha1</span>;
@@ -204,7 +208,9 @@
 <span class="doccomment">/// may not support other digest algorithms.</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [RFC6238]: https://datatracker.ietf.org/doc/html/rfc6238</span>
+
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Copy</span>, <span class="ident">Clone</span>, <span class="ident">Hash</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>)]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;ffi&quot;</span>, <span class="ident">repr</span>(<span class="ident">C</span>))]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">MacDigest</span> {
     <span class="ident">SHA1</span>,
     <span class="ident">SHA256</span>,
@@ -262,6 +268,7 @@
 <span class="doccomment">///</span>
 <span class="doccomment">/// It&#39;s either a TOTP or a HOTP with its current counter.</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;ffi&quot;</span>, <span class="ident">repr</span>(<span class="ident">C</span>))]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ParseResult</span> {
     <span class="ident">TOTP</span>(<span class="ident">TOTP</span>),
     <span class="ident">HOTP</span>(<span class="ident">HOTP</span>, <span class="ident">u64</span>),
@@ -269,6 +276,7 @@
 
 <span class="doccomment">/// Different error types of the optauth URI parsing.</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;ffi&quot;</span>, <span class="ident">repr</span>(<span class="ident">C</span>))]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ParseError</span> {
     <span class="ident">UriParseError</span>(<span class="ident">url::ParseError</span>),
     <span class="ident">WrongScheme</span>(<span class="ident">String</span>),
