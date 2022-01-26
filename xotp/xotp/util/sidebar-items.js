@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["MacDigest","The digest to use with TOTP"]]});
+initSidebarItems({"enum":[["MacDigest","The digest to use with TOTP."],["ParseError","Different error types of the optauth URI parsing."],["ParseResult","Result of an otpauth URI parsing."]],"fn":[["parse_otpauth_uri","Parses an otpauth URI, which is the string format of the QR codes usually given by platforms for TOTP. This method is safe and shouldn’t panic."]]});

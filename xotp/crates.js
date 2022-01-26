@@ -1,1 +1,1 @@
-window.ALL_CRATES = ["base32","block_buffer","cfg_if","cpufeatures","crypto_common","digest","generic_array","hmac","sha1","sha2","subtle","typenum","xotp"];
+window.ALL_CRATES = ["base32","block_buffer","cfg_if","cpufeatures","crypto_common","digest","form_urlencoded","generic_array","hmac","idna","matches","percent_encoding","sha1","sha2","subtle","tinyvec","tinyvec_macros","typenum","unicode_bidi","unicode_normalization","url","xotp"];
