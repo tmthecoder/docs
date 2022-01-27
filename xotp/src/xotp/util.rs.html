@@ -196,9 +196,6 @@
 <span id="195">195</span>
 <span id="196">196</span>
 <span id="197">197</span>
-<span id="198">198</span>
-<span id="199">199</span>
-<span id="200">200</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident">base32::Alphabet</span>;
 <span class="kw">use</span> <span class="ident">hmac</span>::{<span class="ident">Hmac</span>, <span class="ident">Mac</span>};
 <span class="kw">use</span> <span class="ident">sha1::Sha1</span>;
@@ -221,7 +218,6 @@
 <span class="doccomment">///</span>
 <span class="doccomment">/// [RFC6238]: https://datatracker.ietf.org/doc/html/rfc6238</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Copy</span>, <span class="ident">Clone</span>, <span class="ident">Hash</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>)]</span>
-<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;ffi&quot;</span>, <span class="ident">repr</span>(<span class="ident">C</span>))]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">MacDigest</span> {
     <span class="ident">SHA1</span>,
     <span class="ident">SHA256</span>,
@@ -283,7 +279,6 @@
 <span class="doccomment">/// If an [HOTP] instance is returned, a second value is returned</span>
 <span class="doccomment">/// signifying the counter&#39;s value.</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
-<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;ffi&quot;</span>, <span class="ident">repr</span>(<span class="ident">C</span>))]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ParseResult</span> {
     <span class="ident">TOTP</span>(<span class="ident">TOTP</span>),
     <span class="ident">HOTP</span>(<span class="ident">HOTP</span>, <span class="ident">u64</span>),
@@ -295,7 +290,6 @@
 <span class="doccomment">/// in an enum. The returned error may have an associated message or</span>
 <span class="doccomment">/// [url::ParseError] with more information</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>)]</span>
-<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;ffi&quot;</span>, <span class="ident">repr</span>(<span class="ident">C</span>))]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ParseError</span> {
     <span class="ident">UriParseError</span>(<span class="ident">url::ParseError</span>),
     <span class="ident">WrongScheme</span>(<span class="ident">String</span>),

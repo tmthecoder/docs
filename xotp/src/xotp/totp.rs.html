@@ -184,7 +184,6 @@
 <span id="183">183</span>
 <span id="184">184</span>
 <span id="185">185</span>
-<span id="186">186</span>
 </pre><pre class="rust"><code><span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::util</span>::{<span class="ident">base32_decode</span>, <span class="ident">get_code</span>, <span class="ident">hash_generic</span>, <span class="ident">MacDigest</span>};
 
 <span class="doccomment">/// A TOTP generator</span>
@@ -203,7 +202,6 @@
 <span class="doccomment">///</span>
 <span class="doccomment">/// [RFC6238]: https://datatracker.ietf.org/doc/html/rfc6238</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Hash</span>)]</span>
-<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;ffi&quot;</span>, <span class="ident">repr</span>(<span class="ident">C</span>))]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">TOTP</span> {
     <span class="doccomment">/// The secret key used in the HMAC process.</span>
     <span class="doccomment">///</span>
