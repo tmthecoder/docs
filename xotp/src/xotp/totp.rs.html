@@ -184,7 +184,11 @@
 <span id="183">183</span>
 <span id="184">184</span>
 <span id="185">185</span>
-</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::util</span>::{<span class="ident">base32_decode</span>, <span class="ident">get_code</span>, <span class="ident">hash_generic</span>, <span class="ident">MacDigest</span>};
+<span id="186">186</span>
+<span id="187">187</span>
+<span id="188">188</span>
+</pre><pre class="rust"><code><span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::otp_result::OTPResult</span>;
+<span class="kw">use</span> <span class="ident"><span class="kw">crate</span>::util</span>::{<span class="ident">base32_decode</span>, <span class="ident">get_code</span>, <span class="ident">hash_generic</span>, <span class="ident">MacDigest</span>};
 
 <span class="doccomment">/// A TOTP generator</span>
 <span class="doccomment">///</span>
@@ -316,7 +320,7 @@
     }
 }
 
-<span class="comment">// All getters</span>
+<span class="doccomment">/// All getters for the [`TOTP`] struct</span>
 <span class="kw">impl</span> <span class="ident">TOTP</span> {
     <span class="doccomment">/// Gets the algorithm used for code generation.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_digest</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="ident">MacDigest</span> {
@@ -334,7 +338,7 @@
     }
 }
 
-<span class="comment">// All otp generation methods for the [`TOTP`] struct.</span>
+<span class="doccomment">/// All otp generation methods for the [`TOTP`] struct.</span>
 <span class="kw">impl</span> <span class="ident">TOTP</span> {
     <span class="doccomment">/// Generates and returns the TOTP value for the specified time.</span>
     <span class="doccomment">///</span>
@@ -344,7 +348,7 @@
     <span class="doccomment">/// # Panics</span>
     <span class="doccomment">/// This method panics if the [`TOTP::get_otp_with_custom_time_start`]</span>
     <span class="doccomment">/// method does, which happens if the hash&#39;s secret is incorrectly given.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_otp</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">time</span>: <span class="ident">u64</span>) -&gt; <span class="ident">u32</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_otp</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">time</span>: <span class="ident">u64</span>) -&gt; <span class="ident">OTPResult</span> {
         <span class="self">self</span>.<span class="ident">get_otp_with_custom_time_start</span>(<span class="ident">time</span>, <span class="number">0</span>)
     }
 
@@ -357,7 +361,7 @@
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Panics</span>
     <span class="doccomment">/// This method panics if the hash&#39;s secret is incorrectly given.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_otp_with_custom_time_start</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">time</span>: <span class="ident">u64</span>, <span class="ident">time_start</span>: <span class="ident">u64</span>) -&gt; <span class="ident">u32</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_otp_with_custom_time_start</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">time</span>: <span class="ident">u64</span>, <span class="ident">time_start</span>: <span class="ident">u64</span>) -&gt; <span class="ident">OTPResult</span> {
         <span class="kw">let</span> <span class="ident">time_count</span> <span class="op">=</span> (<span class="ident">time</span> <span class="op">-</span> <span class="ident">time_start</span>) <span class="op">/</span> <span class="self">self</span>.<span class="ident">period</span>;
 
         <span class="kw">let</span> <span class="ident">hash</span> <span class="op">=</span> <span class="ident">hash_generic</span>(<span class="kw-2">&amp;</span><span class="ident">time_count</span>.<span class="ident">to_be_bytes</span>(), <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">secret</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">mac_digest</span>);
@@ -366,7 +370,9 @@
             .<span class="ident">try_into</span>()
             .<span class="ident">expect</span>(<span class="string">&quot;Failed byte get&quot;</span>);
 
-        <span class="ident">get_code</span>(<span class="ident">bytes</span>, <span class="self">self</span>.<span class="ident">digits</span>)
+
+        <span class="kw">let</span> <span class="ident">code</span> <span class="op">=</span> <span class="ident">get_code</span>(<span class="ident">bytes</span>, <span class="self">self</span>.<span class="ident">digits</span>);
+        <span class="ident">OTPResult::new</span>(<span class="self">self</span>.<span class="ident">digits</span>, <span class="ident">code</span>)
     }
 }
 </code></pre></div>

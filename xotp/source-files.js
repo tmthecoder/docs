@@ -20,5 +20,5 @@ sourcesIndex["typenum"] = {"name":"","files":["array.rs","bit.rs","int.rs","lib.
 sourcesIndex["unicode_bidi"] = {"name":"","dirs":[{"name":"char_data","files":["mod.rs","tables.rs"]}],"files":["deprecated.rs","explicit.rs","format_chars.rs","implicit.rs","level.rs","lib.rs","prepare.rs"]};
 sourcesIndex["unicode_normalization"] = {"name":"","files":["__test_api.rs","decompose.rs","lib.rs","lookups.rs","no_std_prelude.rs","normalize.rs","perfect_hash.rs","quick_check.rs","recompose.rs","replace.rs","stream_safe.rs","tables.rs"]};
 sourcesIndex["url"] = {"name":"","files":["host.rs","lib.rs","origin.rs","parser.rs","path_segments.rs","quirks.rs","slicing.rs"]};
-sourcesIndex["xotp"] = {"name":"","files":["hotp.rs","lib.rs","totp.rs","util.rs"]};
+sourcesIndex["xotp"] = {"name":"","files":["hotp.rs","lib.rs","otp_result.rs","totp.rs","util.rs"]};
 createSourceSidebar();

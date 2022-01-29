@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["hotp",""],["totp",""],["util",""]]});
+initSidebarItems({"mod":[["hotp",""],["otp_result",""],["totp",""],["util",""]]});

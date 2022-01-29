@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["OTPResult","A convenience struct to hold the result of a [`HOTP`] or [`TOTP`] generation."]]});
