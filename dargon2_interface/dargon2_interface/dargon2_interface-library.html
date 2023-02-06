@@ -11,7 +11,7 @@
   
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
   
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
@@ -21,13 +21,12 @@
 </head>
 
 
-<body data-base-href="../"
-      data-using-base-href="false">
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
 
 <div id="overlay-under-drawer"></div>
 
 <header id="title">
-  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">dargon2_interface</a></li>
     <li class="self-crumb">dargon2_interface library</li>
@@ -36,12 +35,19 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span class="material-symbols-outlined">
+        brightness_4
+      </span>
+    </label>
+  </div>
 </header>
-
 <main>
 
-
   <div id="dartdoc-main-content" class="main-content">
+    
       <div>
 <h1><span class="kind-library">dargon2_interface</span> library 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
@@ -65,7 +71,7 @@
 </dt>
 <dd>
   A class that houses all of the methods to hash and verify a password using
-the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password hashing algorithm. <a href="../dargon2_interface/DArgon2-class.html">[...]</a>
+the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password hashing algorithm.
 </dd>
 
         <dt id="DArgon2Result">
@@ -74,7 +80,7 @@ the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password has
 </dt>
 <dd>
   A class that stores the results from an Argon2 Hashing operation.
-Allows for a user to get various values from the List<int> <code>_bytes</code> and <code>_encodedBytes</code>.</int> 
+Allows for a user to get various values from the List<int> <code>_bytes</code> and <code>_encodedBytes</code>.</int>
 </dd>
 
         <dt id="Salt">
@@ -84,7 +90,7 @@ Allows for a user to get various values from the List<int> <code>_bytes</code> a
 <dd>
   A class to abstract and handle Salts for the Argon2 hashing process.
 Allows for a user to create a salt with given bytes (List<int>)
-or create a new salt with secure random bytes.</int> 
+or create a new salt with secure random bytes.</int>
 </dd>
 
       </dl>
@@ -104,7 +110,7 @@ or create a new salt with secure random bytes.</int>
 
 </dt>
 <dd>
-  The enum to determine the Argon2 Type used (Argon2i, Argon2d, Argon2id). 
+  The enum to determine the Argon2 Type used (Argon2i, Argon2d, Argon2id).
 </dd>
 
         <dt id="Argon2Version">
@@ -112,7 +118,7 @@ or create a new salt with secure random bytes.</int>
 
 </dt>
 <dd>
-  The enum used to determine the Argon2 Version used (0x10 or 0x13). 
+  The enum used to determine the Argon2 Version used (0x10 or 0x13).
 </dd>
 
         <dt id="DArgon2ErrorCode">
@@ -122,7 +128,7 @@ or create a new salt with secure random bytes.</int>
 <dd>
   The enum with all of the Argon2 Error codes, seen directly from the C
 Reference Library of Argon2. The codes are sent into the Exception object as well
-as used to retrieve the error message from the C library. 
+as used to retrieve the error message from the C library.
 </dd>
 
       </dl>
@@ -139,7 +145,7 @@ as used to retrieve the error message from the C library.
 </dt>
 <dd>
   A generic exception class to present each of the thrown exceptions from
-the Argon2 Library to allow users to know exactly what errored <a href="../dargon2_interface/DArgon2Exception-class.html">[...]</a>
+the Argon2 Library to allow users to know exactly what errored
 </dd>
 
       </dl>
@@ -171,24 +177,24 @@ the Argon2 Library to allow users to know exactly what errored <a href="../dargo
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <h5>dargon2_interface library</h5>
     <ol>
-  <li class="section-title"><a href="../dargon2_interface/dargon2_interface-library.html#classes">Classes</a></li>
-  <li><a href="../dargon2_interface/DArgon2-class.html">DArgon2</a></li>
-  <li><a href="../dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></li>
-  <li><a href="../dargon2_interface/Salt-class.html">Salt</a></li>
+      <li class="section-title"><a href="../dargon2_interface/dargon2_interface-library.html#classes">Classes</a></li>
+        <li><a href="../dargon2_interface/DArgon2-class.html">DArgon2</a></li>
+        <li><a href="../dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></li>
+        <li><a href="../dargon2_interface/Salt-class.html">Salt</a></li>
 
 
 
 
 
 
-  <li class="section-title"><a href="../dargon2_interface/dargon2_interface-library.html#enums">Enums</a></li>
-  <li><a href="../dargon2_interface/Argon2Type.html">Argon2Type</a></li>
-  <li><a href="../dargon2_interface/Argon2Version.html">Argon2Version</a></li>
-  <li><a href="../dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></li>
+      <li class="section-title"><a href="../dargon2_interface/dargon2_interface-library.html#enums">Enums</a></li>
+        <li><a href="../dargon2_interface/Argon2Type.html">Argon2Type</a></li>
+        <li><a href="../dargon2_interface/Argon2Version.html">Argon2Version</a></li>
+        <li><a href="../dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></li>
 
 
-  <li class="section-title"><a href="../dargon2_interface/dargon2_interface-library.html#exceptions">Exceptions</a></li>
-  <li><a href="../dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></li>
+      <li class="section-title"><a href="../dargon2_interface/dargon2_interface-library.html#exceptions">Exceptions</a></li>
+        <li><a href="../dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></li>
 </ol>
 
   </div><!--/sidebar-offcanvas-right-->
@@ -207,7 +213,7 @@ the Argon2 Library to allow users to know exactly what errored <a href="../dargo
 
 
 <script src="../static-assets/highlight.pack.js?v1"></script>
-<script src="../static-assets/script.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
 
 
 
