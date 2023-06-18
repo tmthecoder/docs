@@ -40,18 +40,24 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="dargon2_interface&#47;Argon2Type-enum-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-constructor">Argon2Type</span> constructor 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
@@ -68,52 +74,22 @@
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../../index.html">dargon2_interface</a></li>
-  <li><a href="../../dargon2_interface/dargon2_interface-library.html">dargon2_interface</a></li>
-  <li><a href="../../dargon2_interface/Argon2Type.html">Argon2Type</a></li>
-  <li class="self-crumb">Argon2Type const constructor</li>
+    <li><a href="../../index.html">dargon2_interface</a></li>
+    <li><a href="../../dargon2_interface/dargon2_interface-library.html">dargon2_interface</a></li>
+    <li><a href="../../dargon2_interface/Argon2Type.html">Argon2Type</a></li>
+    <li class="self-crumb">Argon2Type const constructor</li>
 </ol>
 
 
     <h5>Argon2Type enum</h5>
-    <ol>
-
-        <li class="section-title"><a href="../../dargon2_interface/Argon2Type.html#constructors">Constructors</a></li>
-          <li><a href="../../dargon2_interface/Argon2Type/Argon2Type.html">Argon2Type</a></li>
-
-        <li class="section-title"><a href="../../dargon2_interface/Argon2Type.html#values">Values</a></li>
-          <li><a href="../../dargon2_interface/Argon2Type.html#d">d</a></li>
-          <li><a href="../../dargon2_interface/Argon2Type.html#i">i</a></li>
-          <li><a href="../../dargon2_interface/Argon2Type.html#id">id</a></li>
-
-        <li class="section-title inherited">
-          <a href="../../dargon2_interface/Argon2Type.html#instance-properties">Properties</a>
-        </li>
-          <li class="inherited"><a href="https://api.dart.dev/stable/2.19.1/dart-core/Object/hashCode.html">hashCode</a></li>
-          <li class="inherited"><a href="https://api.dart.dev/stable/2.19.1/dart-core/Enum/index.html">index</a></li>
-          <li class="inherited"><a href="https://api.dart.dev/stable/2.19.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
-
-        <li class="section-title inherited"><a href="../../dargon2_interface/Argon2Type.html#instance-methods">Methods</a></li>
-          <li class="inherited"><a href="https://api.dart.dev/stable/2.19.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-          <li class="inherited"><a href="https://api.dart.dev/stable/2.19.1/dart-core/Object/toString.html">toString</a></li>
-
-        <li class="section-title inherited"><a href="../../dargon2_interface/Argon2Type.html#operators">Operators</a></li>
-          <li class="inherited"><a href="https://api.dart.dev/stable/2.19.1/dart-core/Object/operator_equals.html">operator ==</a></li>
-
-
-
-
-        <li class="section-title"><a href="../../dargon2_interface/Argon2Type.html#constants">Constants</a></li>
-          <li><a href="../../dargon2_interface/Argon2Type/values-constant.html">values</a></li>
-</ol>
-
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
@@ -124,7 +100,7 @@
 <footer>
   <span class="no-break">
     dargon2_interface
-      1.1.0
+      1.1.1
   </span>
 
   
