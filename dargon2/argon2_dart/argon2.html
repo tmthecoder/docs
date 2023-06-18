@@ -39,18 +39,24 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="argon2_dart&#47;argon2_dart-library-sidebar.html"
+      data-below-sidebar="">
       <div>
 <h1><span class="kind-top-level-property">argon2</span> top-level property 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -63,7 +69,7 @@
         </section>
         
 <section class="desc markdown">
-  <p>The globally accessible instance of <a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2-class.html">DArgon2</a> with Dart
+  <p>The globally accessible instance of <a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/DArgon2-class.html">DArgon2</a> with Dart
 native library loading</p>
 </section>
 
@@ -78,44 +84,21 @@ native library loading</p>
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../index.html">dargon2</a></li>
-  <li><a href="../argon2_dart/argon2_dart-library.html">argon2_dart</a></li>
-  <li class="self-crumb">argon2 property</li>
+    <li><a href="../index.html">dargon2</a></li>
+    <li><a href="../argon2_dart/argon2_dart-library.html">argon2_dart</a></li>
+    <li class="self-crumb">argon2 property</li>
 </ol>
 
 
     <h5>argon2_dart library</h5>
-    <ol>
-      <li class="section-title"><a href="../argon2_dart/argon2_dart-library.html#classes">Classes</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2-class.html">DArgon2</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_core/2.1.1/dargon2_core/DArgon2Native-class.html">DArgon2Native</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Salt-class.html">Salt</a></li>
-
-
-
-
-      <li class="section-title"><a href="../argon2_dart/argon2_dart-library.html#properties">Properties</a></li>
-        <li><a href="../argon2_dart/argon2.html">argon2</a></li>
-
-
-      <li class="section-title"><a href="../argon2_dart/argon2_dart-library.html#enums">Enums</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Argon2Type.html">Argon2Type</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Argon2Version.html">Argon2Version</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></li>
-
-
-      <li class="section-title"><a href="../argon2_dart/argon2_dart-library.html#exceptions">Exceptions</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></li>
-</ol>
-
   </div><!--/.sidebar-offcanvas-left-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
