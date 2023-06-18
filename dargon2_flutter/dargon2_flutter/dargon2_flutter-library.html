@@ -38,19 +38,25 @@
   <div class="toggle" id="theme-button">
     <label for="theme">
       <input type="checkbox" id="theme" value="light-theme">
-      <span class="material-symbols-outlined">
+      <span id="dark-theme-button" class="material-symbols-outlined">
         brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
       </span>
     </label>
   </div>
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
-    
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar=""
+      data-below-sidebar="dargon2_flutter&#47;dargon2_flutter-library-sidebar.html">
+      
       <div>
 <h1><span class="kind-library">dargon2_flutter</span> library 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
@@ -71,7 +77,7 @@ WebAssembly implementation for web.</p>
 
       <dl>
         <dt id="DArgon2">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2-class.html">DArgon2</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/DArgon2-class.html">DArgon2</a></span> 
 
 </dt>
 <dd>
@@ -88,7 +94,7 @@ the <a href="https://github.com/P-H-C/phc-winner-argon2">Argon2</a> password has
 </dd>
 
         <dt id="DArgon2Result">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></span> 
 
 </dt>
 <dd>
@@ -97,7 +103,7 @@ Allows for a user to get various values from the List<int> <code>_bytes</code> a
 </dd>
 
         <dt id="Salt">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Salt-class.html">Salt</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/Salt-class.html">Salt</a></span> 
 
 </dt>
 <dd>
@@ -118,11 +124,11 @@ or create a new salt with secure random bytes.</int>
       <dl class="properties">
         <dt id="argon2" class="property">
   <span class="name"><a href="https://pub.dev/documentation/dargon2_flutter_platform_interface/3.2.0/dargon2_flutter_platform/argon2.html">argon2</a></span>
-  <span class="signature">&#8594; <a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2-class.html">DArgon2</a></span> 
+  <span class="signature">&#8594; <a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/DArgon2-class.html">DArgon2</a></span> 
 
 </dt>
 <dd>
-  The globally accessible instance of <a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2-class.html">DArgon2</a>. It provides all hashing and
+  The globally accessible instance of <a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/DArgon2-class.html">DArgon2</a>. It provides all hashing and
 verification functionality.
   <div class="features"><span class="feature">read-only</span></div>
 
@@ -137,7 +143,7 @@ verification functionality.
 
       <dl>
         <dt id="Argon2Type">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Argon2Type.html">Argon2Type</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/Argon2Type.html">Argon2Type</a></span> 
 
 </dt>
 <dd>
@@ -145,7 +151,7 @@ verification functionality.
 </dd>
 
         <dt id="Argon2Version">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Argon2Version.html">Argon2Version</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/Argon2Version.html">Argon2Version</a></span> 
 
 </dt>
 <dd>
@@ -153,7 +159,7 @@ verification functionality.
 </dd>
 
         <dt id="DArgon2ErrorCode">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></span> 
 
 </dt>
 <dd>
@@ -171,7 +177,7 @@ as used to retrieve the error message from the C library.
 
       <dl>
         <dt id="DArgon2Exception">
-  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></span> 
+  <span class="name "><a href="https://pub.dev/documentation/dargon2_interface/1.1.1/dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></span> 
 
 </dt>
 <dd>
@@ -185,15 +191,16 @@ the Argon2 Library to allow users to know exactly what errored
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../index.html">dargon2_flutter</a></li>
-  <li class="self-crumb">dargon2_flutter library</li>
+    <li><a href="../index.html">dargon2_flutter</a></li>
+    <li class="self-crumb">dargon2_flutter library</li>
 </ol>
 
 
@@ -207,30 +214,6 @@ the Argon2 Library to allow users to know exactly what errored
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <h5>dargon2_flutter library</h5>
-    <ol>
-      <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#classes">Classes</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2-class.html">DArgon2</a></li>
-        <li><a href="../dargon2_flutter/DArgon2Flutter-class.html">DArgon2Flutter</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2Result-class.html">DArgon2Result</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Salt-class.html">Salt</a></li>
-
-
-
-
-      <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#properties">Properties</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_flutter_platform_interface/3.2.0/dargon2_flutter_platform/argon2.html">argon2</a></li>
-
-
-      <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#enums">Enums</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Argon2Type.html">Argon2Type</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/Argon2Version.html">Argon2Version</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2ErrorCode.html">DArgon2ErrorCode</a></li>
-
-
-      <li class="section-title"><a href="../dargon2_flutter/dargon2_flutter-library.html#exceptions">Exceptions</a></li>
-        <li><a href="https://pub.dev/documentation/dargon2_interface/1.1.0/dargon2_interface/DArgon2Exception-class.html">DArgon2Exception</a></li>
-</ol>
-
   </div><!--/sidebar-offcanvas-right-->
 
 </main>
@@ -238,7 +221,7 @@ the Argon2 Library to allow users to know exactly what errored
 <footer>
   <span class="no-break">
     dargon2_flutter
-      3.2.0
+      3.3.0
   </span>
 
   
